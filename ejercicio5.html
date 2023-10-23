@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="ejercicio5.html" method="post">
+        <input type="radio" name="sexo"   id="hombre" value="Sr" autofocus ><label for="hombre">Sr</label>
+        <input type="radio" name="sexo" id="mujer" value="Srt"><label for="mujer">Srt</label>
+        <input type="text" id="nombre" name="nombre" aria-label="nombre/razon social" placeholder="Nombre/Razon social*" title="Indique el nombre o razón social" maxlength="25">
+        <input type="text" id="apellido" name="apellido" aria-label="apellidos" placeholder="Apellidos*" title="Indique sus apellidos" maxlength="35">
+        <input type="password" id="contraseña" name="contraseña" aria-label="contraseña" placeholder="Contraseña*" pattern="[A-Za-z0-9!?-]{8,12}" title="Indique la contraseña" required>
+        <label for="fecha">Fecha de nacimiento</label>
+
+        <input type="date" name="fecha" id="fecha" min="1950-01-01" max="2023-01-01">
+        
+        <input type="text" id="dni" name="dni" title="Indique su DNI" aria-label="Dni" placeholder="DNI/NIF/NIE*" pattern="([0-9]{8})-[A-Z]{1}">
+        <input type="text" id="direccion" name="direccion" aria-label="Direccion" title="Indique su direccion" placeholder="Direccion*" required>
+        <input type="text" id="codigopost" name="codigopost" aria-label="Codigo postal" title="Indique su codigo postal" placeholder="Codigo Postal*">
+        <input type="text" id="ciudad" name="ciudad" aria-label="Ciudad" title="Indique su ciudad" placeholder="Ciudad*" required>    
+    
+    <select name="pais" id="pais" title="Indique el pais" aria-label="pais">
+        <option value="españa" selected>España</option>
+        <option value="portugal">Portugal</option>
+        <option value="alemania">Alemania</option>
+    </select>
+    <select name="provincia" id="provincia" title="Indique la provincia" aria-label="provincia">
+        <option value="malaga">Malaga</option>
+        <option value="alava">Alava</option>
+        <option value="bilbao">Bilbao</option>
+    </select>
+    <input type="tel" id="tel" name="tel" placeholder="Telefono movil*" pattern="[0-9]{9}">  
+    <input type="checkbox" name="check" id="check"> 
+    <label for="check">Estos datos personales se usaran para responder a sus busquedas,procesar sus pedidos o autorizar el acceso</label> 
+    <button name="boton" id="boton">Registrarse</button>
+
+</form>       
+</body>
+</html>
