@@ -1,0 +1,12 @@
+*{
+    box-sizing: border-box;
+}
+body form{
+    display: flex;
+    margin: 1px;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+input{
+    border-bottom: 1px solid lightgray;
+}
