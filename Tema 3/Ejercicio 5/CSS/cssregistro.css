@@ -3,11 +3,11 @@
 }
 body form{
     display: flex;
-    margin: 3px;
-    flex-wrap: wrap;
+    margin: 0 auto;
     flex-direction: column;
-    width: 40%;
-   
+    align-items: center;
+
+  
 }
 #radios{
    margin-bottom: 10px; 
@@ -22,7 +22,9 @@ form>input{
     border-bottom: 1px solid lightgray;
     margin: 5px;
     padding: 0 0 10px 12px;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
+    width: 25rem;
+
 }
 #fechas{
     font-weight: bold ; 
@@ -36,17 +38,21 @@ select,option{
     margin-bottom: 20px;
     text-align: start;
     color: rgba(55, 54, 54, 0.776);
+    width: 25rem;
 }
-.accepto{
-    
+#acepto{
+    width: 25rem;
 }
 button{
     border-radius: 60px ;
     background-color: black;
     color: rgb(144, 121, 121);
-    margin: 4px;
+    margin-top: 15px;
     width: 10rem;
     height: 3rem;
     font-weight: bold ;
     border: none;
+   
+   
+
 }

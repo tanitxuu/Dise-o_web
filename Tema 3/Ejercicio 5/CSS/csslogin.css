@@ -1,18 +1,22 @@
 *{
     box-sizing: border-box;
 }
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 body form{
     display: flex;
-    margin: 1px;
-    flex-wrap: wrap;
+    margin: 2px;
     flex-direction: column;
+    align-items: center;
+
 }
 
-input{
+form input{
     border: none;
     border-bottom: 1px solid lightgray;
     margin: 5px;
-    width: 30%;
+    width: 22rem;
     padding: 5px 0 12px 10px;
    
 }
