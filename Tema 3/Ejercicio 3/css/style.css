@@ -16,12 +16,14 @@ header{
     margin-bottom: 10px;
     color: white;
     padding:15px;
+    border-radius: 10px;
 }
 main{
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
     text-align: center;
+    
 }
 
 main nav{
@@ -31,6 +33,7 @@ height: 3rem;
 color: white;
 padding:15px;
 order: -1;
+border-radius: 10px;
 
 }
 main article{
@@ -39,6 +42,8 @@ main article{
     height: 10rem;
     color: white;
     padding:15px;
+    border-radius: 10px;
+    height: 15rem;
     
 }
 main aside{
@@ -46,6 +51,7 @@ main aside{
     height: 3rem;
     color: white;
     padding:15px;
+    border-radius: 10px;
     
 }
 footer{
@@ -54,6 +60,7 @@ footer{
     text-align: center;
     color: white;
     padding:15px;
+    border-radius: 10px;
 }
 @media (min-width:768px){
     main{
@@ -63,16 +70,18 @@ footer{
     }
     main nav{
         height: 22rem;
-        width:  15rem;
+        width:  25%;
+
     }
     main article{
         height: 22rem;
-        width:  25rem;
+        width:  50%;
+        margin: 0 10px 0 10px;
             
         }
     main aside{
         height: 22rem;
-        width:  15rem;
+        width:  25%;
             
             
         }
