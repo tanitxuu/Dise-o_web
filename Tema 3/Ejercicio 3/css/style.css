@@ -28,8 +28,7 @@ main{
 
 main nav{
 background-color: orange;
-margin-bottom: 10px;
-height: 3rem;
+
 color: white;
 padding:15px;
 order: -1;
@@ -38,7 +37,7 @@ border-radius: 10px;
 }
 main article{
     background-color: blueviolet;
-    margin-bottom: 10px;
+    margin: 10px 0 10px 0;
     height: 10rem;
     color: white;
     padding:15px;
@@ -48,7 +47,6 @@ main article{
 }
 main aside{
     background-color: lightblue;
-    height: 3rem;
     color: white;
     padding:15px;
     border-radius: 10px;
@@ -65,24 +63,15 @@ footer{
 @media (min-width:768px){
     main{
         flex-direction: row;
-        justify-content:space-between ;
-        margin-bottom: 0;
+
     }
-    main nav{
-        height: 22rem;
-        width:  25%;
+    aside, nav{
+        flex-grow: 1;
 
     }
     main article{
-        height: 22rem;
-        width:  50%;
+       flex-grow: 4;
         margin: 0 10px 0 10px;
-            
-        }
-    main aside{
-        height: 22rem;
-        width:  25%;
-            
             
         }
 }

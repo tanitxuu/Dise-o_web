@@ -41,40 +41,55 @@ body {
 }
 
 @media (min-width: 800px) {
-  .contenedor{
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .header{
-    width: 100%;
-  }
-  aside{
-    width: 50%;
+.contenedor{
+  flex-direction: row;
+  flex-wrap: wrap;
+  
 }
-  .footer{
-    width: 100%;
+.header{
+  flex-grow: 1;
 }
+.main{
+  
+  flex-grow: 4;
+}
+.aside1{
+
+  flex-grow: 2;
+}
+.aside2{
+  
+  flex-grow: 2;
+}
+.footer{
+ 
+  flex: 100%;
+}
+
   
 }
 
 @media (min-width: 1040px) {
-  .main{
-    flex: 3 0px;
+  
+  .header{
+    flex: 100%;
   }
   .aside1{
     order: 1;
-    width: 25%;
+    flex-grow: 2;
   }
   .main{
     order: 2;
+    flex-grow: 6;
+    flex-basis: 0px;
   }
   .aside2{
     order: 3;
-    width: 25%;
   }
   .footer{
     order: 4;
   }
+
   
 }
 
