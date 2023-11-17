@@ -1,0 +1,166 @@
+*{
+	box-sizing:border-box;
+}
+/*Comenzamos con la versión móvil*/
+
+/*Hacemos el cuerpo de la web flexible*/
+body{
+	margin: 0;
+	font-size: 16px;
+	color:grey;
+}
+
+/*Estilo para todos los enlaces de la web*/
+a{
+	color:grey;
+	text-decoration: none;
+}
+a:hover{
+	cursor:pointer;
+	text-decoration: underline;
+}
+ul{
+	list-style: none;
+	padding-left: 0;
+}
+/*Hacemos la cabecera flexible*/
+header{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-around;
+	margin:0 8px 0 8px;
+	
+}
+/*La hamburguesa la colocamos al principio*/
+header > nav#menu-principal{
+	order:1;
+	padding-right: 0.5rem;
+}
+
+header > nav#menu-principal > label > span{
+	font-weight: bold;
+	font-size: 2rem;
+}
+/*El input de la hamburguesa tiene que estar oculto*/
+header > nav#menu-principal > input{
+	display: none;
+}
+/*El menu principal es flexible*/
+header > nav#menu-principal > ul#menu{
+	display: none;
+	padding: 0.3rem 0;
+	border-bottom: 1px solid grey;
+}
+/*En segunda posición está el buscador*/
+header > nav#search{font-size: 1.4rem; 	order: 2;
+	margin-left:9px ;}
+/*En tercera posición se encuentra el logo*/
+header > a#logo{font-size: 1.4rem;}
+
+/*El logo de la cabecera tiene un tamaño fijo*/
+header> a picture img  {
+	width: 85%;
+	height: auto;
+	margin-top: 10px;
+}
+
+#logo{
+	order: 3;
+	margin-top: 10px;
+	text-align: center;
+	width: auto;
+}
+
+
+/*En cuarta posición está el icono del usuario de login*/
+header > nav#login{font-size: 1.4rem;order: 4;}
+/*Por último, en quinta posición se encuentra la bolsa de la compra*/
+header > nav#bag{
+	padding-right: 0.5rem;
+	font-size: 1.4rem;
+	order: 5;
+	margin-left:0.5rem ;
+}
+
+/*Hacemos flexible el cuerpo principal*/
+main{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: 10px;
+	
+}
+main article picture img  {
+	width: 100%;
+	height: auto;
+	
+}
+/*Los artículos tienen que ser flexibles*/
+main article{
+	display: flex;
+	flex-direction: column;
+	flex:1 47%;
+	align-items: center;
+	margin-right: 10px;
+	
+	
+}
+
+/*El párrafo con la descripción del artículo va en segundo lugar*/
+main article p{
+	order: 2;
+}
+
+/*La imagen del artículo aparece en primer lugar*/
+main article picture{
+	order: 1;
+}
+
+/*El precio va en tercera posición*/
+main article span{
+	order: 3;
+}
+
+/*El botón lo colocamos en última posición*/
+main > article.item > input{
+	order: 4;
+	border:0;
+	background-color: #92d1c8;
+	border-radius: 0.2rem;
+	padding:0.5rem;
+	color: white;
+}
+main > article.item > input:hover{
+	cursor:pointer;
+	background-color: #88c3ba;
+}
+/*Hacemos el pie flexible*/
+footer{
+	display: flex;
+}
+/*El menú adicional es flexible y va en segunda posición*/
+
+/*El menú social hay que hacerlo flexible*/
+footer > nav#menu-social-adicional{
+	
+	/*lo colocamos en primer lugar dentro del pie*/
+
+}
+/*El menu social también es flexible*/
+
+
+footer > nav#menu-social-adicional > ul > li i{
+	font-size:1.5rem;
+	color: #cda194;
+	padding:0 0.5rem;
+}
+/*El texto del pie va al final*/
+
+
+/*VERSIÓN DE ESCRITORIO*/
+/*En la cabecera va logo e iconos en la misma línea y debajo el menú*/
+/*Hay 4 artículos por fila*/
+/*La barra social y el menú adicional están uno al lado del otro*/
+
+
