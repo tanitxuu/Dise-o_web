@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+
+}
+body{
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+header>picture#logo-cabecera {
+    flex:1 40%;
+    padding-left: 0.5rem;
+}
+
+header>picture#logo-cabecera>img {
+    width: 15rem;
+    height: auto;
+}
+
+header>nav#bloque-iconos>ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1 40%;
+    list-style: none;
+    padding-right: 1rem;
+
+}
+
+header>nav#bloque-iconos ul>li {
+    flex-basis: 10%;
+    padding: 0.3rem;
+}
+
+header>nav#bloque-iconos ul>li:nth-child(2) {
+    padding-left: 1.5rem;
+}
+
+header>nav#bloque-iconos ul>li>a {
+    color: black;
+    font-size: 2rem;
+}
+
+nav#menu-principal {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+nav#menu-principal div#hamburguesa {
+    display: flex;
+    flex-direction: column;
+}
+
+nav#menu-principal div#hamburguesa>span:nth-child(1) {
+    font-size: 1.5rem;
+}
+/*Menu flexible*/
+
+ul#menu {
+    display: none;
+    flex-direction: column;
+    text-align: left;
+}
+
+nav#menu-principal:hover>ul#menu {
+    display: flex;
+}
+
+ul#menu>li {
+    border-bottom: 1px white solid;
+    margin: 0.5rem 0;
+}
+
+ul>li>a {
+    color: white;
+    text-decoration: none;
+}
+
+.submenu {
+    display: none;
+    background-color: black;
+    list-style: none;
+
+}
+
+#menu>li:hover>.submenu {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+/*etiquetas sueltas*/
+i {
+    padding-right: 1.6rem;
+
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+/*MAIN*/
+main section#form-contacto{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+}
+main section#form-contacto h2{
+    margin-top: 20px;
+    text-align: center;
+    
+ }
+main section#form-contacto label{
+   display: none;
+}
+main section form{
+    display: flex;
+    flex-direction: column;
+
+    flex-wrap: wrap;
+   align-self: center;
+}
+main section form input{
+    padding: 0.65rem;
+    margin: 0.5rem;
+    border-radius: 8px;
+}
+main section form textarea{
+    padding: 0.65rem;
+    margin: 0.5rem;
+    
+
+}
+main section form span{
+  font-size: 0.7rem;
+  color: gray;
+  margin: 10px;
+}
+input#nombre{
+    margin-top: -1.5rem;
+    background-color: black;
+    color: white;
+}
+input#boton{
+    background-color: black;
+    color: white;
+}
