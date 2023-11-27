@@ -1,58 +1,76 @@
 *{
     box-sizing: border-box;
 }
-body form{
+body{
+    margin: 0;
+    font-size: 16px;
+}
+body>form{
     display: flex;
-    margin: 0 auto;
-    flex-direction: column;
-    align-items: center;
-
+    flex-direction: column; 
+    margin: 7px;
+    
+}
+body>form>label{
+    margin: 7px;
+    font-weight: bold;
+}
+body>form>div#radios{
+    margin: 8px;
   
 }
-#radios{
-   margin-bottom: 10px; 
-}
-
-#radios label{
-    font-weight: bold ; 
- }
-
-form>input{
+body>form>input,select{
     border: none;
-    border-bottom: 1px solid lightgray;
-    margin: 5px;
-    padding: 0 0 10px 12px;
-    margin-bottom: 1rem;
-    width: 25rem;
+    border-bottom: 0.5px solid lightslategray;
+    padding: 7px;
+    margin: 6px;
+    background-color: white;
+}
+body>form>select{
+  color: lightslategray;
+}
+form button {
+    margin-top: 1em;
+    color: burlywood;
+    background-color: rgb(54, 54, 54);
+    border-radius: 20em;
+    height: 4em;
+    width: 12em;
+}
+form button:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+@media (min-width:1024px){
+    body form{
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 40rem;
+        margin: 0 auto;
+       
+     
+    }
+    body>form>div#radios{
+        flex: 100%;
+    }
 
-}
-#fechas{
-    font-weight: bold ; 
-    margin-bottom: 15px;
-    font-size: 14px;
-}
-select,option{
-    border: none;
-    border-bottom: 1px solid lightgray;
-    padding: 10px 5px 5px 12px;
-    margin-bottom: 20px;
-    text-align: start;
-    color: rgba(55, 54, 54, 0.776);
-    width: 25rem;
-}
-#acepto{
-    width: 25rem;
-}
-button{
-    border-radius: 60px ;
-    background-color: black;
-    color: rgb(144, 121, 121);
-    margin-top: 15px;
-    width: 10rem;
-    height: 3rem;
-    font-weight: bold ;
-    border: none;
-   
-   
-
+    body>form>label{
+        flex: 100%;
+    }
+    body>form>select,input{
+        flex:45%;
+        margin: 10px;
+    }
+    body>form>input#ciudad{
+        flex:100%;
+        
+    } body>form>input#email{
+        flex:100%;
+        
+    }
+    body>form>input#tel{
+        flex:100%;
+        
+    }
 }
