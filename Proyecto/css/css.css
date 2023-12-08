@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-size: 16px;
+    margin: 0;
+}
+ul{
+    list-style: none;
+}
+.Logo{
+    width: 25%;
+    height: auto;
+}
+/*Header*/
+header{
+    background-color: #69B1FA;
+    display: flex;  
+    flex-wrap: wrap;
+}
+header>div#imglogo{
+    flex: 100%;
+    text-align: center;
+}
+header>div#menu-principal{
+  display: flex;
+  justify-content: space-between;
+  flex: 100%;
+  margin: 7px 17px 7px 17px;
+}
+div#buscador>img{
+    width: 20px;
+    position: relative;
+    left: 20px;
+}
+div#buscador{
+    display: flex;
+ }
+div#buscador>input{
+   padding: 1px;
+   
+}
+header>div#menu-principal>div#hamburgesa input{
+    display: none;
+}
+header>div#menu-principal>nav#menu ul{
+    display: none;
+}
