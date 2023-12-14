@@ -1,0 +1,213 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-size: 16px;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2px;
+    align-items: center;
+}
+
+header div#menu_principal {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+/*Hamburgesa*/
+header div#menu_principal>label>input#hamburguer-icon {
+    display: none;
+}
+
+
+
+header div#menu_principal>label {
+    display: inline-block;
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    background-color: white;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+}
+
+header div#menu_principal>label>span.hamburguer-line {
+    position: absolute;
+    top: 1.75rem;
+    left: 0.5rem;
+    width: 1.5rem;
+    height: 0.25rem;
+    background: black;
+    transition: background 0s .25s;
+}
+
+header div#menu_principal>label>span.hamburguer-line:nth-child(2) {
+    top: 1.3rem;
+    transition: top .25s ease .25s, transform .25s ease 0s;
+}
+
+header div#menu_principal>label>span.hamburguer-line:nth-child(4) {
+    top: 2.2rem;
+    transition: top .25s ease .25s, transform .25s ease 0s;
+}
+
+header div#menu_principal>label>input#hamburguer-icon:checked~span.hamburguer-line:nth-child(2) {
+    top: 1.75rem;
+    transform: rotate(45deg);
+    transition-delay: 0s, .25s;
+}
+
+header div#menu_principal>label>input#hamburguer-icon:checked~span.hamburguer-line:nth-child(4) {
+    top: 1.75rem;
+    transform: rotate(-45deg);
+    transition-delay: 0s, .25s;
+}
+
+header div#menu_principal>label>input#hamburguer-icon:checked~span.hamburguer-line:nth-child(3) {
+    background: none;
+}
+
+
+header div#buscador {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+header div#buscador img {
+    position: absolute;
+    top: 75px;
+    left: 120px;
+
+}
+
+header div#buscador input#buscar {
+    background-color: rgb(220, 223, 225);
+    text-align: center;
+    flex: 100%;
+    padding: 8px;
+    margin: 12px;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border: 1px solid black;
+
+
+
+}
+
+section article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 50%;
+    margin: 0;
+
+
+}
+
+section article img:nth-child(1) {
+    position: relative;
+    top: 76px;
+    background-color: white;
+    border-radius: 20px;
+    right: 75px;
+}
+
+section article p#descuento {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    font-size: 10px;
+    position: relative;
+    top: 47px;
+    left: 50px;
+    width: 6.3rem;
+    text-align: center;
+}
+
+p {
+    margin: 4px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+
+}
+
+li {
+    list-style: none;
+}
+
+h2 {
+    font-size: 18px;
+    margin: 6px;
+}
+
+label:nth-child(1) {
+    text-decoration: line-through;
+    font-size: 13px;
+}
+
+label:nth-child(2) {
+    font-weight: bold;
+}
+
+footer {
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+}
+
+footer nav#social ul {
+    display: flex;
+    padding: 0.5rem;
+
+}
+
+footer nav#social ul li {
+    margin-right: 25px;
+}
+
+nav#lista {
+    display: flex;
+    flex-direction: column;
+    margin-top: -1rem;
+
+}
+
+nav#lista h2 {
+    align-self: flex-start;
+    margin: 1rem;
+
+}
+
+nav#lista ul {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex: 100%;
+    padding: 0.4rem;
+    margin-top: -0.2rem;
+
+}
+
+nav#lista ul li {
+
+    padding: 0.5rem;
+    border-bottom: 1px solid black;
+
+}
