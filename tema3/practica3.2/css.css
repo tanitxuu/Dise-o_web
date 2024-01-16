@@ -1,0 +1,19 @@
+body{
+    margin: 0 ;
+    
+    
+}
+div{
+    
+    padding: 10px;
+    border: 3px solid  violet;
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+img{
+    cursor: pointer;
+}
+
+
