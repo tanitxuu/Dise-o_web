@@ -8,14 +8,14 @@
 </head>
 <body>
     <div>
-    <audio id="myaudio" src="audio.mp3"></audio>
-    <img id="playpause" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAl0lEQVRIS2NkoDFgpLH5DKMWEAzhAQ+iDUAnFgDxA4JOxaGAkA/+A/V9AOIJQNxIjiXEWAAzF+SLRCA+QIpFpFgAMxcUbIXEBhs5FoAsIjrYyLWA6GCj1IKHQJsS8MULuRZ8hKasBkIRTo4FG0nJG6RYQDA4sPmGGAuIDg5yLKB5UUEoDgnKEwoiggYQUjBqAaEQon2lDwCCBSIZQeNI9AAAAABJRU5ErkJggg==" onclick="playaudio()"/>
-    <button id="restart" onclick="restartaudio()"></button>
-    <input type="range" name="musica" id="musica">
-  
-    <button id="icvol" onclick="volumen()"></button>
-    <input type="range" name="volumen" id="volumen">
-</div>
-<script src="prueba.js"></script>
+        <audio id="myaudio" src="audio/audio.m4a"></audio>
+        <img id="playpause" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAl0lEQVRIS2NkoDFgpLH5DKMWEAzhAQ+iDUAnFgDxA4JOxaGAkA/+A/V9AOIJQNxIjiXEWAAzF+SLRCA+QIpFpFgAMxcUbIXEBhs5FoAsIjrYyLWA6GCj1IKHQJsS8MULuRZ8hKasBkIRTo4FG0nJG6RYQDA4sPmGGAuIDg5yLKB5UUEoDgnKEwoiggYQUjBqAaEQon2lDwCCBSIZQeNI9AAAAABJRU5ErkJggg==" onclick="playaudio()" alt="Play"/>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAsklEQVRIS+2U3RFAMBCEk4rQAZ3QmZLohAq4NZiImPsxhgc3kxe52y+3J/Hu4fAP67vPAFrqtLZ0K+1gIvGOVkVr0IA0AOhCHBDARBECUJSJqpxrKA+2IdBdHNAq8DEEpBKveBxg104BUrZt8JEqS8aiLXfR0QD6VZwbsgkAv2vhfEwAofZh6CqLfsDZO40nUe77Q75x+EPp6S/SvEXcIXAp8/gmc0WmfelzbRL/OxDZNgM96yoZenDwMwAAAABJRU5ErkJggg==" onclick="restartaudio()" alt="Restart"/>
+        <input type="range" name="musica" id="musica">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABLUlEQVRIS9VV7RHBQBCVCpQgKkAHlKCD6EAH0gEqEB3ogA7QAR3ogPdMLvNmXeYuJD/szM595Hbfvt29S9LrWJKO/fe+BcgRGDUoTQHG8LiDcnS2J8yX0IsPrQkAI16JE2f7LPcWGAsLEgOgUau9s82wuYH2oR8gIQAbtQ+AewziXH6cYWTa3qIAU6yZ39SXS8+eMmBqWIc19AYd+gD4YRDpXINjDeiQ9s7HHPODZeCKFYuhRd6WDByLPdZZmwBs0QmUaT5qmrQGvzCwKavWfwNwRchsVZeiO+ZpmzWIKvIDiLyNsaJdFNWmpFdAY+9C3UWr0mNT5Is8x6Y+cHpGGyTqqahLDY3JbGQOKAM+MZTGj536tGxae64VRNm0/sOxbMgoKKH/QdBB6EDnAC+x1kYZ4CP93gAAAABJRU5ErkJggg=="  alt="Volumen"/>
+        <input type="range" name="volumen" id="volumen" onclick="volumen()">
+        <label id="volumenN">0%</label>
+    </div>
+    <script src="prueba.js"></script>
 </body>
 </html>
