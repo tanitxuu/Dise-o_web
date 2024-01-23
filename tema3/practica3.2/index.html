@@ -3,19 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="css2.css">
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <audio id="myaudio" src="audio/audio.m4a"></audio>
-        <img id="playpause" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAl0lEQVRIS2NkoDFgpLH5DKMWEAzhAQ+iDUAnFgDxA4JOxaGAkA/+A/V9AOIJQNxIjiXEWAAzF+SLRCA+QIpFpFgAMxcUbIXEBhs5FoAsIjrYyLWA6GCj1IKHQJsS8MULuRZ8hKasBkIRTo4FG0nJG6RYQDA4sPmGGAuIDg5yLKB5UUEoDgnKEwoiggYQUjBqAaEQon2lDwCCBSIZQeNI9AAAAABJRU5ErkJggg==" onclick="playaudio()" alt="Play"/>
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAsklEQVRIS+2U3RFAMBCEk4rQAZ3QmZLohAq4NZiImPsxhgc3kxe52y+3J/Hu4fAP67vPAFrqtLZ0K+1gIvGOVkVr0IA0AOhCHBDARBECUJSJqpxrKA+2IdBdHNAq8DEEpBKveBxg104BUrZt8JEqS8aiLXfR0QD6VZwbsgkAv2vhfEwAofZh6CqLfsDZO40nUe77Q75x+EPp6S/SvEXcIXAp8/gmc0WmfelzbRL/OxDZNgM96yoZenDwMwAAAABJRU5ErkJggg==" onclick="restartaudio()" alt="Restart"/>
-        <input type="range" name="musica" id="musica">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABLUlEQVRIS9VV7RHBQBCVCpQgKkAHlKCD6EAH0gEqEB3ogA7QAR3ogPdMLvNmXeYuJD/szM595Hbfvt29S9LrWJKO/fe+BcgRGDUoTQHG8LiDcnS2J8yX0IsPrQkAI16JE2f7LPcWGAsLEgOgUau9s82wuYH2oR8gIQAbtQ+AewziXH6cYWTa3qIAU6yZ39SXS8+eMmBqWIc19AYd+gD4YRDpXINjDeiQ9s7HHPODZeCKFYuhRd6WDByLPdZZmwBs0QmUaT5qmrQGvzCwKavWfwNwRchsVZeiO+ZpmzWIKvIDiLyNsaJdFNWmpFdAY+9C3UWr0mNT5Is8x6Y+cHpGGyTqqahLDY3JbGQOKAM+MZTGj536tGxae64VRNm0/sOxbMgoKKH/QdBB6EDnAC+x1kYZ4CP93gAAAABJRU5ErkJggg=="  alt="Volumen"/>
-        <input type="range" name="volumen" id="volumen" onclick="volumen()">
+<div id="video">
+    <video id="video" poster="audio/trailer.png" >
+        <source src="audio/videos/trailernuevo.mp4" type="video/mp4"/>
+        <source src="audio/videos/trailer.ogv" type="video/ogg; codecs='theora,vorbis'"/>
+        <source src="audio/videos/trailer.webm" type="video/webm; codecs='tvp8,vorbis'"/>
+    </video>
+    <div id="reproductor">
+        <button id="reproducirPausar" ><img id="playpause" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAl0lEQVRIS2NkoDFgpLH5DKMWEAzhAQ+iDUAnFgDxA4JOxaGAkA/+A/V9AOIJQNxIjiXEWAAzF+SLRCA+QIpFpFgAMxcUbIXEBhs5FoAsIjrYyLWA6GCj1IKHQJsS8MULuRZ8hKasBkIRTo4FG0nJG6RYQDA4sPmGGAuIDg5yLKB5UUEoDgnKEwoiggYQUjBqAaEQon2lDwCCBSIZQeNI9AAAAABJRU5ErkJggg==" alt="Play"/></button> 
+        <button id="retroceder" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAr0lEQVRIS+2TgQmAMAwE7QZuoiPoRDqCTqYj6CaOYAINtDU0obWgUCEIT/vXfIhpCn+msH9TAWLCn4qohedOUKvzbE7zutJ2gEYbVG8BC/w57RGZBuAaneAwWBcCknZxA5EAWeYIjAGyzWOAV8wlwA4HOqgDarT5hhqbuzsLKaJsiGbIWRAJgN3iPJIhGkAIwU2mRSMwaUmLRpewk9maxzQPou2AW1KVVgFiTP+P6AbI6TQZhNzMlAAAAABJRU5ErkJggg=="/></button>
+        <label id="tiempoReproduccion">0:00/0:00</label>
+        <button id="adelantar" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAsUlEQVRIS2NkoDFgpLH5DKMWEAzhAQ2iBqDzJgDxByRnYhPD6wtcPggA6loPxBeA2BFqCTYxsoNIAKjzABDrI1kCMgxdDNl3WC3DFwdUsYRQJFNsCSELQN6myBJiLdgPtMgAiC8CsQM0sNHFsMYHIQtArifbcJBDCEUyRYbjs4Bil8PSLC4fJAAVzEcKc1D4YhMjO6OBNDYAMc2KCoIuI1YBoVRErDk41Y1aQDAIaR5EAByrPBl28Rs7AAAAAElFTkSuQmCC"/></button>
+        <button id="parar" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAQ0lEQVRIS2NkoDFgpLH5DKMWEAzh4R9E/wmGAUQBzpAgFESjFhDMaKNBNBpE8GxIdkYjMiPjVkYoJ49aQDCZjgYRAwCY5goZ7Uc3bwAAAABJRU5ErkJggg=="/></button>
+        
+        <button id="disminuirVelocidad"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABC0lEQVRIS7WVgRHCIAxF20msE6gTuIJOYDdQJ1EnUCdQN9ENdBL9/654kAIFCtzl1NL8R0IS66rwqgvrVyGAFodYwuad8UzPzu74fPgO6QOs4HiANQNRvrG/hxHWWy7AEW9uI9NHH4KMZQOkiCvRE77sdIIEMC23yJPL19d6uiSA+ZyMBFBjqjR0QIuH55Hiyv0fhQ64YHeTCXCFDg9s9AFre5YJQK2FBHwt4iGNSDenry5QHJAzRS9ExdFi3EHxS87RZN4y5WaORvtAp7E1Gp/liMI7KggpOuxUZCmQ3iSVVST7jOkiaGj4Mecc0VF/ODqMIBrrWo0S1jn7hqJWYdclyyhG/w6dNcmgH/IsLhkfNCDJAAAAAElFTkSuQmCC"/></button>
+        <label for="">Velocidad</label>
+        <button id="aumentarVelocidad"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABFElEQVRIS7VVixHBQBBNKhEVoAItUIF0gEpQASpAJ3RAJbw3k+Xucl+5u5mdZHK77+0/dVX41IXxqxiCFk7MIdNO6NO9kyueN5+TPoIFDHeQJhDlE/dbCMl6x0Wwh+Y6MX20IZF2bAT/gAvoAS8blcEkYFouiZ6b6ks1XSYB8znyEIj+26NDjLHcqwQtPh4D3scQEOIbhUpwwsUqE8EZOHRYmwP29iQTAbFmJoEtrzGDSBynrQpQnCBnih6IiqtFq0HxIscM2aA2ZUQ5Bu0FnMY2aPwWE0Wgk39DZtZADIsuuyEkvU3qikBImC5G41t+1GXOuaKTfjhqnklEYV/LKmGfc24IagV2FTlUwOT72F2TDCwGHxiXNhl1pHk7AAAAAElFTkSuQmCC"/></button>
+        <button id="silenciar" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABLUlEQVRIS9VV7RHBQBCVCpQgKkAHlKCD6EAH0gEqEB3ogA7QAR3ogPdMLvNmXeYuJD/szM595Hbfvt29S9LrWJKO/fe+BcgRGDUoTQHG8LiDcnS2J8yX0IsPrQkAI16JE2f7LPcWGAsLEgOgUau9s82wuYH2oR8gIQAbtQ+AewziXH6cYWTa3qIAU6yZ39SXS8+eMmBqWIc19AYd+gD4YRDpXINjDeiQ9s7HHPODZeCKFYuhRd6WDByLPdZZmwBs0QmUaT5qmrQGvzCwKavWfwNwRchsVZeiO+ZpmzWIKvIDiLyNsaJdFNWmpFdAY+9C3UWr0mNT5Is8x6Y+cHpGGyTqqahLDY3JbGQOKAM+MZTGj536tGxae64VRNm0/sOxbMgoKKH/QdBB6EDnAC+x1kYZ4CP93gAAAABJRU5ErkJggg=="  alt="Volumen"/></button>
+       
+        <input type="range" name="volumen" id="volumen" >
         <label id="volumenN">0%</label>
+        <button id="pantallaCompleta"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAX0lEQVRIS2NkoDFgpLH5DHS34D8eH6E7hii1ZGmCOoIiC8gNOpilcP24fDBqwcAFEdXzHbmRSbRDhp8FGBmF6LCAKBzNaAQDbPAEETanklW0k6WJkvqAYCCTqmDo52QALsQcGSF8WtwAAAAASUVORK5CYII=" alt="pantalla completa"/></button>
     </div>
-    <script src="prueba.js"></script>
+</div>
+ 
 </body>
+<script src="video.js"></script>
 </html>
