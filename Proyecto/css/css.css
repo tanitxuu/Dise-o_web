@@ -9,7 +9,11 @@ ul{
     list-style: none;
 }
 .Logo{
-    width: 25%;
+    width: 15%;
+    height: auto;
+}
+img{
+    width: 100%;
     height: auto;
 }
 /*Header*/
@@ -17,32 +21,53 @@ header{
     background-color: #69B1FA;
     display: flex;  
     flex-wrap: wrap;
+   
 }
 header>div#imglogo{
+    margin-top: 10px;
     flex: 100%;
     text-align: center;
 }
 header>div#menu-principal{
-  display: flex;
-  justify-content: space-between;
-  flex: 100%;
-  margin: 7px 17px 7px 17px;
+ display: flex;
+ flex: 100%;
+ justify-content: space-between;
+ padding: 0px 9px 0px 9px;
+
+
 }
-div#buscador>img{
-    width: 20px;
-    position: relative;
-    left: 20px;
-}
-div#buscador{
-    display: flex;
- }
+
 div#buscador>input{
-   padding: 1px;
+   padding: 2px;
+   border-radius: 10px;
+   position: relative;
+   right: 14px;
+   width: 17rem;
+   text-align: center;
+   
    
 }
+/*nav*/
 header>div#menu-principal>div#hamburgesa input{
     display: none;
 }
 header>div#menu-principal>nav#menu ul{
     display: none;
+}
+/*Section imagen-principal*/
+section#imagen-principal article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section#imagen-principal article img{
+    width: 100%;
+    height: auto;
+    margin-top: 3px;
+}
+section#imagen-principal article button{
+    width: 10px;
+    height: 10px;
+    border-radius: 30px;
+    margin: 8px;
 }

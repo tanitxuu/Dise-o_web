@@ -16,12 +16,12 @@ body{
     align-items: center;
     justify-content: space-between;
     padding: 15px;
-    border: 2px solid rgb(184, 140, 238);
+    border: 2px solid white;
     border-radius: 10px;
 }
 button{
     background-color: white;
-    border: 2px solid rgb(184, 140, 238);
+    border: 2px solid white;
     border-radius: 10px;
     cursor: pointer;
   
@@ -32,6 +32,6 @@ img{
     padding:3px;
 }
 input{
-    accent-color:   rgb(184, 140, 238);
+    accent-color:   yellow;
     width: 10%;
 }
