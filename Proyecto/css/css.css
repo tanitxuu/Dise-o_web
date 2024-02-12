@@ -159,11 +159,11 @@ footer{
     margin-top: 35px;
     flex-wrap: wrap;
 }
-#formulario{
-    flex-basis: 100%;
-    display: flex;
-    flex-direction: column;
-}
 
+form{
+   display: flex;
+   flex-direction: column;
+   
+}
 
 
