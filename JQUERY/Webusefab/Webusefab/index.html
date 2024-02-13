@@ -20,6 +20,19 @@
     <script src="jq/script.js"></script>
     <script src="inc/jquery.mb.CSSAnimate.js"></script>
     <script src="inc/jquery.mb.browser.min.js"></script>
+    <script>
+        $(document).ready(function(){
+				$('#desplazable :ul').focusin(function(){		
+					$(this).css({'background-color':'pink'});
+					
+					
+				})
+				$('#hola :input').focusout(function(){		
+					$(this).css({'background-color':'white'});
+					
+				})
+			});
+    </script>
 
 </head>
 
