@@ -10,41 +10,29 @@
     <script src="js/eventos.js"></script>
 
     <script>
-$(document).ready(function () {
-    $("main > article > div > section > div.texto").hide(); // Oculta el texto inicialmente
+        $(document).ready(function () {
+            $("main article div section div").on({ 
+                click: function () {
+  
+                    $(".texto").fadeOut()
+                    $("section div div").children("svg:last-child").fadeIn()
 
-    $("main > article > div > section > div").click(function () {
-        /*me seleciona un hermano que sea de la clase que este entre ()*/
-        var texto = $(this).siblings(".texto");
-        var svg = $(this).find("svg");
+                    if ($(this).siblings(".texto").css("display") === "none") {
 
-        texto.toggle('fadeIn');
+                        $(this).siblings(".texto").fadeIn()  //cambio texto
+                        $(this).children("div").children("svg:last-child").fadeOut() //cambio icono
+                    } else {
 
-        // Rotar el SVG correspondiente dentro del div clicado
-        if (texto.is(':visible')) {
-            svg.css({
-                transform: 'rotate(0deg)'
-            });
-        } else {
-            svg.css({
-                transform: 'rotate(90deg)'
-            });
-        }
-    });
-});
-
-
-
-          
-
-        
+                        $(this).siblings(".texto").fadeOut() //cambio texto
+                        $(this).children("div").children("svg:last-child").fadeIn()//cambio icono
+                    }
+                }
+            })
 
 
 
 
-
-
-
+        });
     </script>
 </head>
 
@@ -69,9 +57,9 @@ $(document).ready(function () {
                                 <rect x1="0" y1="0" width="21" height="3" />
                             </svg>
                         </div>
-                    </div>
-                    <div class="texto">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel pulvinar metus, et
+                         </div>
+                        <div class="texto">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel pulvinar metus, et
                             luctus
                             elit.
                             Sed vehicula arcu at purus finibus venenatis. Vestibulum ac lacus venenatis, elementum sem

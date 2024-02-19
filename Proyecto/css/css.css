@@ -16,9 +16,13 @@ img{
     width: 100%;
     height: auto;
 }
+a{
+    text-decoration: none;
+    color: black;
+}
 
 span{
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: #2150E4;
     font-weight: bold;
 }
@@ -46,19 +50,31 @@ header>div#menu-principal{
 div#buscador>input{
    padding: 2px;
    border-radius: 10px;
-   position: relative;
-   right: 5px;
    width: 17rem;
    text-align: center;
    
    
 }
 /*nav*/
-header>div#menu-principal>div#hamburgesa input{
+nav#menu{
+    background-color: #1B3147;
+    flex: 100%;
+    opacity: 0.9;
     display: none;
+    
 }
-header>div#menu-principal>nav#menu ul{
-    display: none;
+nav#menu>ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -30px;
+}
+nav#menu>ul>li{
+    text-align: center;
+    background-color: antiquewhite;
+    padding: 10px;
+    width: 15rem;
+    margin-top: 10px;
 }
 /*Section imagen-principal*/
 section#imagen-principal article {
@@ -76,7 +92,15 @@ section#imagen-principal article button{
     height: 10px;
     border-radius: 30px;
     margin: 8px;
+    
+
 }
+section#imagen-principal article button:nth-child(1){
+    background-color: #69B1FA;
+   
+    
+}
+
 /*Cuerpo titulo*/
 div#titulo{
     display: flex;
@@ -88,23 +112,13 @@ div#titulo{
 div#titulo h4{
     font-size: 0.9rem;
     position: relative;
-    right: 6px;
-
-    
 }
-div#titulo svg{
-    font-size: 0.9rem;
-    position: relative;
-    left: 12px;
-    bottom: 2px;
 
-    
-}
 div#titulo select{
    background-color: #69B1FA;
    border-radius: 5px;
    width: 28%;
-   margin-right: 5px;
+   margin-right: 8px;
 }
 /*Cuerpo leer*/
 section#lectura{
@@ -117,11 +131,20 @@ section#lectura{
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 35%;
+    flex: 30%;
     margin: 10px;
     padding: 10px;
 
    
+}
+.leer-cargar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 35%;
+    margin: 10px;
+    padding: 10px;
+    display: none;
 }
 .leer img{
     margin-bottom: -10px;
@@ -141,7 +164,7 @@ section#lectura{
     -webkit-text-stroke-color: #FFD600;
    
 }
-section#lectura article:nth-child(11){
+section#lectura article:nth-child(17){
     flex-basis: 100%;
     margin-top: 30px;
 }
@@ -152,6 +175,7 @@ section#lectura article button{
     background-color: #FFD600 ;
     border: 1px solid black;
     font-weight: bold;
+    align-self: center;
    
 }
 /*footer*/
@@ -172,13 +196,20 @@ form{
 }
 form>label{
     margin-top: 9px;
+    
 }
 form>input,textarea{
     width: 14rem;
     margin-top: 5px;
+    border-radius: 5px;
+}
+form>textarea{
+   
+    padding: 10px;
+    border-radius: 5px;
 }
 form>button{
-    margin-top: 4px;
+    margin-top: 5px;
     padding: 5px;
     width: 5rem;
     border-radius: 20px;
@@ -186,7 +217,34 @@ form>button{
     border: 1px solid black;
     font-weight: bold;
 }
-footer img{
-   flex: 5%;
+footer>div#abajo{
+    display: flex;
+   margin-top: 10px;
+   flex: 100%;
+   justify-content: space-around;
+  
+   
+}
+footer>div#abajo>img{
+   
+   width: 20%;
+   
+}
+
+footer>div#abajo>div#redes-sociales{
+    margin-right: 15px;
+    padding-top: 10px;
+   
+}
+footer>div#abajo>div#politicas{
+   
+    margin-top: 12px;
+   
+}
+
+footer>div#abajo>div#politicas>ul>li{
+    font-size: 15px;
+    margin-top: 12px;
+   
 }
 

@@ -31,6 +31,13 @@
 					$(this).css({'background-color':'white'});
 					
 				})
+                $('nav#menu-principal').on({
+                    click: function(){
+                        $('ul#menu').slideToggle('slow',function(){
+                            
+                        })
+                    }
+                })
 			});
     </script>
 

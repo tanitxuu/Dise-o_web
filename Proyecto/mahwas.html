@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/css.css">
+    <script src="js/jquery-3.7.1.min.js" type="text/javascript"></script>
+    <script src="js/jquery.animate-colors.js" type="text/javascript"></script>
     <title>Proyecto Nube Manga</title>
 </head>
 
@@ -17,106 +19,129 @@
 
         <div id="menu-principal">
             <div id="hamburgesa">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAATElEQVRIS2NkoDFgpLH5DKMWEAzhAQmi/wSdhV8BiqOx+YDmFlDoAVTtAxIHNPcBzeOA5hbQPIiGvgU0jwOaWzD042DUByghQPPSFABt6AYZfO/+XQAAAABJRU5ErkJggg=="
-                    alt="Hamburgesa">
-                <input type="checkbox" />
+               <img src="img/svg/bx-menu.svg" alt="">
+                
             </div>
 
-            <nav id="menu">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="mangas.html">Mangas</a></li>
-                    <li><a href="mahwas.html">Manhwas</a></li>
-                    <li><a href="manhuas.html">Manhuas</a></li>
-                </ul>
-            </nav>
+            
             <div id="buscador">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABTUlEQVRIS8WUjVECMRBGoQItQSsQK1A7kAo4KkAqECpQKgAqACsQOoAKtASpAL7HbJwMJCEMAXbmm8zdZfP2L1evndnqZz6/FgPcCtyRXqWGBbHQOpUG0l9uYCFAJecPCUjIOLwrjXIguwAOH5rjl9ZPaWbPz1p70pM9Ny2jJMcHEPGPRd5ORAjk3cp0b2sU4gOcI5FT+5SRFZn0LassAE18kF68ssQcKde3hM9jKhI/g7VtzB3drP0XBRxTIno0kZaSuyfBSoWazGViBIs3mTH9lW5sMpiQkPX0kjFdSXdS8lanLtrMQHOjMDkczIodHFE2xX4V3GAyCRmR8x0YQYykcWRv8mf3Jieayd3AaCj94XDK4oaCb0C4/XuWO/Mh30ov3X8rCjkF4A5tefS9TE4FHISUAOxCaDjl21opgIOw/h9eGhAahKIZXAewAdh4Qxm4MtzTAAAAAElFTkSuQmCC"
-                    alt="Lupa" />
+
                 <input type="text" name="buscar" id="buscar" placeholder="Buscar">
             </div>
-            <div>
-                <img
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAB8UlEQVRIS7XV4VEcMQwFYKiAUAFHBYEKgAqACgIdJJUkVMBRAVABpIIkHVwqSKgg6LuRMj7freHPaUazu7b83pMse3d3tmy7W8bfeQ/BRYg4D5+Fn6ag53guwh/CH0ciRwTAbhN4hIHoOhzpmk0RfI7Irxn9O57fEuBnjh1lNuIOcsz7Tc+wiaAF/5LgowyG8T2Bsjwl2mXW2OcsMzLPlAP5Ir/t032+n+X88rMnsEDKrXLgP8I/dGn8je/jhqQygXFYsS1BqVBzoGU6RRfdhQNh9uRTuA6yrgw4gf+zbwnmuaivO6V74fvh3pls/uS38bLKgpgrgy2BDvkYLu3qFjEjgh7jNAbs4fdw7ysE/1JGvy9VonnMy45pYQr7EplbwWnBpghmmZEytfaSKttshwTPMXsS3pfIIiQ2dpl2mFj1XnSkDqCO21iieUzojE2Hy0Ld4cmo1m29+uEmV5tSVX2sWxygUt4JXmaiJau7rJ1sU4srQBYy0hFUqzewUmwMqX0x5vRehdv8lXM0uip0j6x+JViprCxkh1RreyJkw6tCQNWxgFYW1GA+gdbdZci1PW9jpq5r6foXsEUuolJ3MMA6Ttwsx9bAjU8RFAg1dd+3wtp3NUdEwJqNCCrYPnCqiwwoQPvEJ+09BKP1b85tneAV7L53GZafpwgAAAAASUVORK5CYII=" alt="Usuario"/>
+            <div id="usu">
+               <img src="img/svg/bx-user-circle.svg" alt="">
             </div>
         </div>
-
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="mangas.html">Mangas</a></li>
+                <li><a href="mahwas.html">Manhwas</a></li>
+                <li><a href="manhuas.html">Manhuas</a></li>
+            </ul>
+        </nav>
     </header>
     <section id="imagen-principal">
         <article>
             <img src="img/hellpa.jpeg" alt="Hell Paradise">
-            <button></button><button></button><button></button><button></button><button></button>
+            <div><button></button><button></button><button></button><button></button><button></button></div>
         </article>
     </section>
+    <div id="titulo">
+        <img src="" alt="">
+        <h4>Ultimas actualizaciones</h4>
+      
+            <select name="Genero" id="Genero">
+                <option>Elige Genero</option>
+                <option>Isekai</option>
+                <option>Aventura</option>
+                <option>Comedia</option>
+                <option>Demonios</option>
+                <option>Yaoi</option>
+                <option>Drama</option>
+                <option>Gore</option>
+                <option>Arte</option>
+                <option>Artes Marciales</option>
+                <option>Yuri</option>
+                <option>Fantasia</option>
+            </select>
+      
+
+    </div>
     <section id="lectura">
-        <div id="titulo">
-            <!--aqui iria el fuegito azul-->
-            <h2>Ultimas actualizaciones</h2>
-            <select name="" id=""></select>
-        </div>
-        <article>
-            <img src="img/jujutsu.webp" alt="Jujutsu kaisen">
+        <article class="leer">
+            <img src="img/mangas/jujutsu.jpg" alt="Jujutsu kaisen">
             <h5>Jujutsu kaisen</h5>
-            <span>Capitulos:1-101</span>
-            <span>¡Nuevo Capitulo 101!</span>
+            <span class="cap">Capitulos:1-101</span>
+            <span class="nuevocap">¡Nuevo Capitulo 10!</span>
         </article>
-        <article>
-            <img src="img/tsumestun.jpg" alt="Shumetsu No Valkyrie">
-            <h5>Shumetsu No Valkyrie</h5>
-            <span>Capitulos:1-81</span>
-            <span>¡Nuevo Capitulo 81!</span>
+        <article class="leer">
+            <img src="img//mangas/ragnarok.jpg" alt="Shumetsu No Valkyrie">
+            <h5>Ragnarok</h5>
+            <span class="cap">Capitulos:1-81</span>
+            <span class="nuevocap">¡Nuevo Capitulo 81!</span>
         </article>
-        <article>
-            <img src="img/manhwa4.jpeg" alt="El gran mago regresa despues de 400 años">
-            <h5>El gran mago regresa despues de 400 años</h5>
-            <span>Capitulos:1-91</span>
-            <span>¡Nuevo Capitulo 91!</span>
+        <article class="leer">
+            <img src="img//manhwas/prueba1.jpg" alt="El gran mago regresa despues de 400 años">
+            <h5>El gran mago  años</h5>
+            <span class="cap">Capitulos:1-91</span>
+            <span class="nuevocap">¡Nuevo Capitulo 91!</span>
         </article>
-        <article>
-            <img src="img/manhwa3.jpg" alt="Nos vemos en el futuro">
-            <h5>Nos vemos en el futuro</h5>
-            <span>Capitulos:1-11</span>
-            <span>¡Nuevo Capitulo 11!</span>
+        <article class="leer">
+            <img src="img//manhwas/prueba2.jpg" alt="Nos vemos en el futuro">
+            <h5>Nos vemos futuro</h5>
+            <span class="cap">Capitulos:1-11</span>
+            <span class="nuevocap">¡Nuevo Capitulo 11!</span>
         </article>
-        <article>
-            <img src="img/manhwa5.jpeg" alt="Otherworldly Evil Monarch">
-            <h5>Otherworldly Evil Monarch</h5>
-            <span>Capitulos:1-144</span>
-            <span>¡Nuevo Capitulo 144!</span>
+
+        <article class="leer">
+            <img src="img//manhwas/prueba3.jpg" alt="Otherworldly Evil Monarch">
+            <h5>Otherworldly</h5>
+            <span class="cap">Capitulos:1-144</span>
+            <span class="nuevocap">¡Nuevo Capitulo 14!</span>
         </article>
-        <article>
-            <img src="img/manhua8.webp" alt="El artista marcial">
+        <article class="leer">
+            <img src="img//manhuas/monte hua.jpg" alt="El artista marcial">
             <h5>El artista marcial</h5>
-            <span>Capitulos:1-91</span>
-            <span>¡Nuevo Capitulo 91!</span>
+            <span class="cap">Capitulos:1-91</span>
+            <span class="nuevocap">¡Nuevo Capitulo 91!</span>
         </article>
-        <article>
-            <img src="img/manhua9.webp" alt="Heaven Defying sword">
+        <article class="leer">
+            <img src="img//manhwas/sololeveling.jpg" alt="Heaven Defying sword">
             <h5>Heaven Defying sword</h5>
-            <span>Capitulos:1-15</span>
-            <span>¡Nuevo Capitulo 15!</span>
+            <span class="cap">Capitulos:1-15</span>
+            <span class="nuevocap">¡Nuevo Capitulo 15!</span>
         </article>
-        <article>
-            <img src="img/manhwa1.jpeg" alt="The Male Leads Boyfriend is obsessed with mea">
-            <h5>The Male Leads Boyfriend is obsessed with mea</h5>
-            <span>Capitulos:1-47</span>
-            <span>¡Nuevo Capitulo 47!</span>
+        <article class="leer">
+            <img src="img//mangas/vid.jpg" alt="The Male Leads Boyfriend is obsessed with mea">
+            <h5>The Male Leads  </h5>
+            <span class="cap">Capitulos:1-47</span>
+            <span class="nuevocap">¡Nuevo Capitulo 47!</span>
         </article>
-        <article>
-            <img src="img/manhwa2.jpg" alt="la renuncia de la doctora">
+        <article class="leer">
+            <img src="img//manhwas/manhwa.jpg" alt="la renuncia de la doctora">
             <h5>La renuncia de la doctora</h5>
-            <span>Capitulos:1-35</span>
-            <span>¡Nuevo Capitulo 35!</span>
+            <span class="cap">Capitulos:1-35</span>
+            <span class="nuevocap">¡Nuevo Capitulo 35!</span>
         </article>
-        <article>
-            <img src="img/manhua7.webp" alt="Registro del Señor más poderoso">
+        <article class="leer">
+            <img src="img//manhuas/manhua.jpg" alt="Registro del Señor más poderoso">
             <h5>Registro del Señor más poderoso</h5>
-            <span>Capitulos:1-191</span>
-            <span>¡Nuevo Capitulo 191!</span>
+            <span class="cap">Capitulos:1-191</span>
+            <span class="nuevocap">¡Nuevo Capitulo 11!</span>
         </article>
-        <button>Ver todo</button>
+        <article><button>Ver todos los comics</button></article>
     </section>
+
     <footer>
+       
+            <form action="post">
+                <label for="email">Contactanos:</label>
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Mensaje"></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+       <div id="abajo">
         <img src="img/logoazul.png" alt="Logo Nuve Manga" class="Logo">
         <div id="politicas">
             <ul id="politica">
@@ -127,17 +152,17 @@
         </div>
         <div id="redes-sociales">
             <ul id="red-sociale">
-                <li><img
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAW5JREFUSEvFlc1NQ0EMhCdNcAUqAS7cKQAJKgEk+gDK4ARUws+BOxUEfcjzZO1zNhuhp+wlSmJ7xuNZ70oLn9XC9bU3gCNJV5JOJJ12uvyI/14l3Uny9yml6oDCDxFBAsm9AxlIEPsk6TYHtwAEv0fRsx3mQ95LxF9nUi0AzOnguGq3ALwMaX4kXVTkWgDY02rFHmCYHkp6k/Qo6VzSs6Sv+N1dTPktwDoSadOHonTWDhsi95K+JR2E/gAQjwJ/ZwSAJIrjEgZoh91Et1OxIEKnU91tAHaUi+cx+D/ksNM8wy5ALtYbuh1XxQ8DIAlSbHIVM/sXANozg0oig2MIHMUZkohgu8gO4tO3NA8Z7bOldwaAVc+mFM/7ZyvA7KJE6943LL/PKGpZsrNmF7VaFejeMhtZS3ZVlnh20RzkdTFbvxuQsoz5XpQPji9Q3vUj65qY7KhyVeT9g/+tfQ/AbwYum70de3syR4Y6FLN4B78fNGgZwcR3kQAAAABJRU5ErkJggg==" alt="Instagram" />
+                <li><img src="img/svg/bxl-instagram-alt(1).svg">
                 </li>
-                <li><img
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAASBJREFUSEvdlesNwjAMhK+bwCYwCTAJMAkwCTAJbAL6pNhyTdrSov7BUkWFH5c722mjma2Zub7+H2AhaSvpVp6o6EoST83ncV0SHSTtQ7VnBwAHwPBfJJHXshpALj5mDnaSzjGhBvAaUzHFwmTZB3Aqmv+AoWOUKjN4SDJdp4K0WEQApgUG2UgYC7q2oYgANXloGI0DAHbRTGsOFieOGJdpCCD6r2XuKWDAvNfA2Q1YtK6Kmv5OVVIE8AKFUp4870M8YW08CUQiNjbLAAuWi//xR/saYOokuTpDDKYCVBl03T93SZuChBQkY/ziw/DHUfYrIy+a3Z6m98fqJ0rE03wrTvMpbofo/OD0XdNZNvaAeJruhS3o/79oU6fI82aX6A0R6z4ZekfONQAAAABJRU5ErkJggg==" alt="Discord" />
-                </li>
-                <li><img
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAOZJREFUSEvtleEJwkAMhV830U10E51EnUSdRDfRTZRPGonhSq54FX80UEohly95L0c7TRzdxPU1A1KFvUQrSRdJd0lnSfv09GfCRtIxnveAm6SFO3OStK2EUBiABU0u+fCAR6EYieu+qxKLhijO9DFetTMAOUOSmSRDQ1YDrMDB+YJXpa49bDTApuHtvWo2QaXf77R0ArYIGbJu8YgnSpYC0BzILqygn+Tabxl3hrxRHpipTMDGxALe9K8A1hUgtofgAtK9RROAbQ96x2gGGNqk/wDELryJ2R2IZ/GIDZz/aJlyP5DoCXszORl0uuCcAAAAAElFTkSuQmCC" alt="Gmail" />
+                <li><img src="img/svg/bxl-discord-alt(1).svg">
+                       
+                </li><img src="img/svg/bxl-twitter.svg">
+                <li>
+                        
                 </li>
             </ul>
         </div>
+    </div>
     </footer>
 </body>
 
