@@ -8,6 +8,9 @@ body{
 ul{
     list-style: none;
 }
+a:hover{
+	cursor:pointer;
+}
 .Logo{
     width: 15%;
     height: auto;
@@ -59,9 +62,10 @@ div#buscador>input{
 nav#menu{
     background-color: #1B3147;
     flex: 100%;
-    opacity: 0.9;
     display: none;
-    
+	position: absolute;
+	top:7.41rem;
+	width: 22.5rem;
 }
 nav#menu>ul{
     display: flex;
@@ -76,117 +80,89 @@ nav#menu>ul>li{
     width: 15rem;
     margin-top: 10px;
 }
-/*Section imagen-principal*/
-section#imagen-principal article {
+/*Inicio sesion*/
+section#iniciarsesion{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-section#imagen-principal article img{
-    width: 100%;
-    height: auto;
-    margin-top: 3px;
-}
-section#imagen-principal article button{
-    width: 10px;
-    height: 10px;
-    border-radius: 30px;
-    margin: 8px;
-    
 
+section#iniciarsesion>h2{
+   color: #69B1FA;
 }
-section#imagen-principal article button:nth-child(1){
-    background-color: #69B1FA;
-   
-    
-}
-
-/*Cuerpo titulo*/
-div#titulo{
+section#iniciarsesion>form{
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    margin: 2px;
+    flex-direction: column;
 }
-div#titulo h4{
-    font-size: 0.9rem;
+section#iniciarsesion>form>input{
+   padding: 12px;
+   width: 18rem;
+   border: 1px solid lightslategray;
+  
+}
+#clave{
+    margin-top: 20px;
+}
+section#iniciarsesion>form>img{
+    width: 1.8rem;
     position: relative;
-}
-
-div#titulo select{
-   background-color: #69B1FA;
-   border-radius: 5px;
-   width: 28%;
-   margin-right: 8px;
-}
-/*Cuerpo leer*/
-section#lectura{
+    bottom: 33px;
+    left: 15rem;
+     
+   }
+#check{
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    text-align: center;
+    margin-top: -13px;   
 }
-.leer{
+#check label{
+  margin-left: 4px;  
+}
+#inicio{
+    padding: 12px;
+    color: white;
+    background-color: #69B1FA;
+    border:1px solid #A5A1A1;
+    margin-top: 20px;
+    font-weight: bold;
+    width: 18rem;
+}
+#crear{
+    padding: 12px;
+    color: black ;
+    background-color: #69b1fa3b;
+    border:1px solid #A5A1A1;
+    margin-top: 20px;
+    font-weight: bold;
+    width: 18rem;
+
+}
+section#iniciarsesion>div#botones>span{
+   color: black;
+     text-align: center;
+     margin: 10px 0px 15px 0px ;
+     font-weight: bold;
+     -webkit-text-stroke-width: 0.4px;
+     -webkit-text-stroke-color: #FFD600;
+     font-size: 1rem;
+     text-decoration: underline;
+   }
+
+div#botones{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    flex: 30%;
-    margin: 10px;
-    padding: 10px;
-
-   
-}
-.leer-cargar{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 35%;
-    margin: 10px;
-    padding: 10px;
-    display: none;
-}
-.leer img{
-    margin-bottom: -10px;
-    
- }
-
-.cap{
-   margin-top: -15px;
-   
 }
 
-.nuevocap{
-    margin-top: 2px;
-    color: black;
-    font-weight: bold;
-    -webkit-text-stroke-width: 0.2px;
-    -webkit-text-stroke-color: #FFD600;
-   
-}
-section#lectura article:nth-child(17){
-    flex-basis: 100%;
-    margin-top: 30px;
-}
-section#lectura article button{
-    width: 11rem;
-    padding: 7px;
-    border-radius: 20px;
-    background-color: #FFD600 ;
-    border: 1px solid black;
-    font-weight: bold;
-    align-self: center;
-   
-}
+
 /*footer*/
 footer{
     background-color: #69B1FA;
     display: flex;
-    margin-top: 35px;
+    margin-top: 15px;
     flex-wrap: wrap;
 }
 
-form{
+form#pie{
    display: flex;
    flex-direction: column;
    flex: 100%;
@@ -194,21 +170,21 @@ form{
    align-items: center;
    
 }
-form>label{
+form#pie>label{
     margin-top: 9px;
     
 }
-form>input,textarea{
+form#pie>input,textarea{
     width: 14rem;
     margin-top: 5px;
     border-radius: 5px;
 }
-form>textarea{
+form#pie>textarea{
    
     padding: 10px;
     border-radius: 5px;
 }
-form>button{
+form#pie>button{
     margin-top: 5px;
     padding: 5px;
     width: 5rem;
@@ -218,7 +194,7 @@ form>button{
     font-weight: bold;
 }
 footer>div#abajo{
-    display: flex;
+display: flex;
    margin-top: 10px;
    flex: 100%;
    justify-content: space-around;
@@ -247,4 +223,3 @@ footer>div#abajo>div#politicas>ul>li{
     margin-top: 12px;
    
 }
-

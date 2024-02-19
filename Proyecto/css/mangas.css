@@ -1,0 +1,306 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-size: 16px;
+    margin: 0;
+}
+ul{
+    list-style: none;
+}
+a:hover{
+	cursor:pointer;
+}
+.Logo{
+    width: 15%;
+    height: auto;
+}
+img{
+    width: 100%;
+    height: auto;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+span{
+    font-size: 0.7rem;
+    color: #2150E4;
+    font-weight: bold;
+}
+/*Header*/
+header{
+    background-color: #69B1FA;
+    display: flex;  
+    flex-wrap: wrap;
+   
+}
+header>div#imglogo{
+    margin-top: 10px;
+    flex: 100%;
+    text-align: center;
+}
+header>div#menu-principal{
+ display: flex;
+ flex: 100%;
+ justify-content: space-between;
+ padding: 0px 9px 0px 9px;
+
+
+}
+
+div#buscador>input{
+   padding: 2px;
+   border-radius: 10px;
+   width: 17rem;
+   text-align: center;
+   
+   
+}
+/*nav*/
+nav#menu{
+    background-color: #1B3147;
+    flex: 100%;
+    display: none;
+	position: absolute;
+	top:7.41rem;
+	width: 22.5rem;
+}
+nav#menu>ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -30px;
+}
+nav#menu>ul>li{
+    text-align: center;
+    background-color: antiquewhite;
+    padding: 10px;
+    width: 15rem;
+    margin-top: 10px;
+}
+/*Section imagen-principal*/
+section#imagen-principal article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section#imagen-principal article img{
+    width: 100%;
+    height: auto;
+    margin-top: 3px;
+}
+section#imagen-principal article button{
+    width: 10px;
+    height: 10px;
+    border-radius: 30px;
+    margin: 8px;
+    
+
+}
+section#imagen-principal article button:nth-child(1){
+    background-color: #69B1FA;
+   
+    
+}
+
+/*Cuerpo titulo*/
+div#titulo{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2px;
+}
+div#titulo h4{
+    font-size: 0.9rem;
+    position: relative;
+    right: 1rem;
+}
+div#titulo img{
+    width: 1.5rem;
+    position: relative;
+    left: 20px;
+    bottom: 2px;
+
+    
+}
+div#titulo option{
+    background-color: #1B3147;
+    color: bisque;
+    
+ }
+div#titulo select{
+   background-color: #69B1FA;
+   border-radius: 5px;
+   width: 7rem;
+   margin-right: 8px;
+}
+/*Cuerpo leer*/
+section#lectura{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+}
+.leer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 30%;
+    margin: 10px;
+    padding: 10px;
+
+   
+}
+.leer-cargar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 35%;
+    margin: 10px;
+    padding: 10px;
+    display: none;
+}
+
+.leer img{
+    margin-bottom: -10px;
+    
+ }
+
+.cap{
+   margin-top: -17px;
+   
+}
+
+.nuevocap{
+    margin-top: 2px;
+    color: black;
+    font-weight: bold;
+    -webkit-text-stroke-width: 0.2px;
+    -webkit-text-stroke-color: #FFD600;
+   
+}
+section#lectura article:nth-child(17){
+    flex-basis: 100%;
+    margin-top: 30px;
+}
+section#lectura article button{
+    width: 11rem;
+    padding: 7px;
+    border-radius: 20px;
+    background-color: #FFD600 ;
+    border: 1px solid black;
+    font-weight: bold;
+    align-self: center;
+   
+   
+}
+article#lista{
+    display: flex;
+    flex: 100%;
+    justify-content: center;
+    margin: 8px;
+    
+    
+}
+article#lista ul{
+    display: flex;
+
+}
+
+article#lista img{
+   width: 2rem ;
+}
+/*footer*/
+footer{
+    background-color: #69B1FA;
+    display: flex;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+form{
+   display: flex;
+   flex-direction: column;
+   flex: 100%;
+   text-align: center;
+   align-items: center;
+   
+}
+form>label{
+    margin-top: 9px;
+    
+}
+form>input,textarea{
+    width: 14rem;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+form>textarea{
+   
+    padding: 10px;
+    border-radius: 5px;
+}
+form>button{
+    margin-top: 5px;
+    padding: 5px;
+    width: 5rem;
+    border-radius: 20px;
+    background-color: #FFD600 ;
+    border: 1px solid black;
+    font-weight: bold;
+}
+footer>div#abajo{
+    display: flex;
+   margin-top: 10px;
+   flex: 100%;
+   justify-content: space-around;
+  
+   
+}
+footer>div#abajo>img{
+   
+   width: 20%;
+   
+}
+
+footer>div#abajo>div#redes-sociales{
+    margin-right: 15px;
+    padding-top: 10px;
+   
+}
+footer>div#abajo>div#politicas{
+   
+    margin-top: 12px;
+   
+}
+
+footer>div#abajo>div#politicas>ul>li{
+    font-size: 15px;
+    margin-top: 12px;
+   
+}
+/*boton volver*/
+div#volverarriba{
+	color:#454545;
+	font-family: 'Open Sans Condensed', sans-serif;
+	width: 2rem;
+	background-color: #69B1FA;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	position: fixed;
+	opacity: 0.7;
+	display:none;
+    border-radius: 40px;
+}
+div#volverarriba > a{
+	display: flex;
+	justify-content: space-between;
+	border:1px solid grey;
+    border-radius: 40px;
+	padding: 0.1rem ;
+}

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/iniciosesion.css">
+        <link rel="stylesheet" href="css/politicas.css">
         <script src="js/jquery-3.7.1.min.js" type="text/javascript"></script>
         <script src="js/jquery.animate-colors.js" type="text/javascript"></script>
         <title>Proyecto Nube Manga</title>
@@ -27,7 +27,20 @@
 
             }
         })
+        $(window).on({
+                scroll: function () {
+                    if ($(this).scrollTop() > 50 && $('#volverarriba').css('display') === 'none') {
+                        $('#volverarriba').css(
+                            'display', 'block'
+                        )
+                    } else if ($(this).scrollTop() < 50) {
+                        $('#volverarriba').css(
+                            'display', 'none'
+                        )
+                    }
 
+                }
+            })
 
     });
 
@@ -64,22 +77,42 @@
                 </ul>
             </nav>
         </header>
-        <section id="iniciarsesion">
-            <h2>Iniciar sesion</h2>
-            <form action="index.html" method="post">
-                <input type="email" name="email" id="email" placeholder="Email">
-                <input type="password" name="clave" id="clave" placeholder="Contraseña">
-                <img src="img/svg/bx-show.svg" alt="Ver contraseña" id="ojo">
-                <div id="check">
-                    <input type="checkbox">          
-                    <label> Mantener las sesion iniciada</label>
+        <section id="politicas">
+            <article id="privacidad" class="polis">
+                <h4>Politicas de privacidad</h4>
+                <div>
+                    <p>
+                    Lorem ipsum dolor sit amet consectetur. Odio bibendum aliquet ac nam. Convallis pulvinar
+                     eu eget scelerisque lacus convallis ullamcorper praesent et. Posuere dui justo egestas platea 
+                     faucibus justo velit. Eget nibh eros phasellus sit nec. Amet tellus morbi lectus aliquam eu enim. 
+                     Morbi amet ornare id interdum sit.
+                    </p>
                 </div>
-            </form>
-            <div id="botones">
-                <a href="index.html"> <button  id="inicio">Iniciar sesion</button></a>
-                 <a href="crearcuenta.html"><button id="crear">Crear cuenta</button></a>
-                <span>¿Has olvidado la contraseña?</span>
-            </div>
+            </article>
+            <article id="derechos" class="polis">
+                <h4>Derechos de autor</h4>
+                <div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur. Odio bibendum aliquet ac nam. Convallis pulvinar
+                         eu eget scelerisque lacus convallis ullamcorper praesent et. Posuere dui justo egestas platea 
+                         faucibus justo velit. Eget nibh eros phasellus sit nec. Amet tellus morbi lectus aliquam eu enim. 
+                         Morbi amet ornare id interdum sit.
+                    </p>
+
+                </div>
+            </article>
+            <article id="cookies" class="polis">
+                <h4>Politicas de cookies</h4>
+                <div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur. Odio bibendum aliquet ac nam. Convallis pulvinar
+                         eu eget scelerisque lacus convallis ullamcorper praesent et. Posuere dui justo egestas platea 
+                         faucibus justo velit. Eget nibh eros phasellus sit nec. Amet tellus morbi lectus aliquam eu enim. 
+                         Morbi amet ornare id interdum sit.
+                    </p>
+                </div>
+            </article>
+           
         </section>
 
         <footer>
@@ -94,10 +127,10 @@
         <img src="img/logoazul.png" alt="Logo Nuve Manga" class="Logo">
         <div id="politicas">
             <ul id="politica">
-                <li><a href="politicas.html#privacidad">Politicas de privacidad</a></li>
-                <li><a href="politicas.html#derechos">Derechos de autor</a></li>
-                <li><a href="politicas.html#cookies">Politicas de cookies</a></li>
-        </ul>
+                    <li><a href="politicas.html#privacidad">Politicas de privacidad</a></li>
+                    <li><a href="politicas.html#derechos">Derechos de autor</a></li>
+                    <li><a href="politicas.html#cookies">Politicas de cookies</a></li>
+            </ul>
         </div>
         <div id="redes-sociales">
             <ul id="red-sociale">
@@ -108,6 +141,8 @@
         </div>
     </div>
     </footer>
+    <div id="volverarriba"><a href="#top"><img src="/Proyecto/img/svg/bx-up-arrow-alt.svg" alt="Volver arriba"> <span><i
+        class="fa fa-sort-asc" aria-hidden="true"></i></span></a></div>
     
 </body>
 </html>

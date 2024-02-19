@@ -1,0 +1,219 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-size: 16px;
+    margin: 0;
+}
+ul{
+    list-style: none;
+}
+a:hover{
+	cursor:pointer;
+}
+.Logo{
+    width: 15%;
+    height: auto;
+}
+img{
+    width: 100%;
+    height: auto;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+span{
+    font-size: 0.7rem;
+    color: #2150E4;
+    font-weight: bold;
+}
+/*Header*/
+header{
+    background-color: #69B1FA;
+    display: flex;  
+    flex-wrap: wrap;
+   
+}
+header>div#imglogo{
+    margin-top: 10px;
+    flex: 100%;
+    text-align: center;
+}
+header>div#menu-principal{
+ display: flex;
+ flex: 100%;
+ justify-content: space-between;
+ padding: 0px 9px 0px 9px;
+
+
+}
+
+div#buscador>input{
+   padding: 2px;
+   border-radius: 10px;
+   width: 17rem;
+   text-align: center;
+   
+   
+}
+/*nav*/
+nav#menu{
+    background-color: #1B3147;
+    flex: 100%;
+    display: none;
+	position: absolute;
+	top:7.41rem;
+	width: 22.5rem;
+}
+nav#menu>ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -30px;
+}
+nav#menu>ul>li{
+    text-align: center;
+    background-color: antiquewhite;
+    padding: 10px;
+    width: 15rem;
+    margin-top: 10px;
+}
+/*Crear cuenta*/
+section#crearcuenta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section#crearcuenta>h2{
+   color: #69B1FA;
+}
+section#crearcuenta>form{
+    display: flex;
+    flex-direction: column;
+}
+section#crearcuenta>form>input{
+   padding: 12px;
+   width: 18rem;
+   border: 1px solid lightslategray;
+  
+}
+#clave{
+    margin-top: 20px;
+}
+section#crearcuenta>form>img{
+    width: 1.8rem;
+    position: relative;
+    bottom: 33px;
+    left: 15rem;
+     
+   }
+#check{
+    display: flex;
+   align-items: center;
+    margin-top: -13px; 
+     
+}
+#check label{
+  margin-left: 10px;
+  font-size: 14px;
+}
+#inicio{
+    padding: 12px;
+    color: black ;
+    background-color: #69b1fa3b;
+    border:1px solid #A5A1A1;
+    margin-top: 20px;
+    font-weight: bold;
+    width: 18rem;
+}
+
+section#crearcuenta>div#botones>span{
+   color: black;
+     text-align: center;
+     margin: 10px 0px 15px 0px ;
+     font-weight: bold;
+     -webkit-text-stroke-width: 0.4px;
+     -webkit-text-stroke-color: #FFD600;
+     font-size: 1rem;
+     text-decoration: underline;
+   }
+
+div#botones{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/*footer*/
+footer{
+    background-color: #69B1FA;
+    display: flex;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+form#pie{
+   display: flex;
+   flex-direction: column;
+   flex: 100%;
+   text-align: center;
+   align-items: center;
+   
+}
+form#pie>label{
+    margin-top: 9px;
+    
+}
+form#pie>input,textarea{
+    width: 14rem;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+form#pie>textarea{
+   
+    padding: 10px;
+    border-radius: 5px;
+}
+form#pie>button{
+    margin-top: 5px;
+    padding: 5px;
+    width: 5rem;
+    border-radius: 20px;
+    background-color: #FFD600 ;
+    border: 1px solid black;
+    font-weight: bold;
+}
+footer>div#abajo{
+display: flex;
+   margin-top: 10px;
+   flex: 100%;
+   justify-content: space-around;
+  
+   
+}
+footer>div#abajo>img{
+   
+   width: 20%;
+   
+}
+
+footer>div#abajo>div#redes-sociales{
+    margin-right: 15px;
+    padding-top: 10px;
+   
+}
+footer>div#abajo>div#politicas{
+   
+    margin-top: 12px;
+   
+}
+
+footer>div#abajo>div#politicas>ul>li{
+    font-size: 15px;
+    margin-top: 12px;
+   
+}

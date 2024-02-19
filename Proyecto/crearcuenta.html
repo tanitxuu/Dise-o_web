@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/iniciosesion.css">
+        <link rel="stylesheet" href="css/crearcuenta.css">
         <script src="js/jquery-3.7.1.min.js" type="text/javascript"></script>
         <script src="js/jquery.animate-colors.js" type="text/javascript"></script>
         <title>Proyecto Nube Manga</title>
@@ -64,21 +64,23 @@
                 </ul>
             </nav>
         </header>
-        <section id="iniciarsesion">
-            <h2>Iniciar sesion</h2>
+        <section id="crearcuenta">
+            <h2>Crea tu cuenta</h2>
             <form action="index.html" method="post">
                 <input type="email" name="email" id="email" placeholder="Email">
                 <input type="password" name="clave" id="clave" placeholder="Contraseña">
                 <img src="img/svg/bx-show.svg" alt="Ver contraseña" id="ojo">
+                <input type="password" name="reclave" id="reclave" placeholder=" Repite la contraseña">
+                <img src="img/svg/bx-show.svg" alt="Ver contraseña" id="ojo2">
                 <div id="check">
                     <input type="checkbox">          
-                    <label> Mantener las sesion iniciada</label>
+                    <label>Recibir promociones, novedades y <br>contenidos personalizados</label>
                 </div>
             </form>
             <div id="botones">
-                <a href="index.html"> <button  id="inicio">Iniciar sesion</button></a>
-                 <a href="crearcuenta.html"><button id="crear">Crear cuenta</button></a>
-                <span>¿Has olvidado la contraseña?</span>
+                 <button type="submit" id="inicio"> Crear cuenta</button>
+                 
+                <span>¿Ya tienes cuenta? Iniciar sesion</span>
             </div>
         </section>
 

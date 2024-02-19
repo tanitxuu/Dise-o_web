@@ -1,0 +1,199 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-size: 16px;
+    margin: 0;
+}
+ul{
+    list-style: none;
+}
+a:hover{
+	cursor:pointer;
+}
+.Logo{
+    width: 15%;
+    height: auto;
+}
+img{
+    width: 100%;
+    height: auto;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+span{
+    font-size: 0.7rem;
+    color: #2150E4;
+    font-weight: bold;
+}
+/*Header*/
+header{
+    background-color: #69B1FA;
+    display: flex;  
+    flex-wrap: wrap;
+   
+}
+header>div#imglogo{
+    margin-top: 10px;
+    flex: 100%;
+    text-align: center;
+}
+header>div#menu-principal{
+ display: flex;
+ flex: 100%;
+ justify-content: space-between;
+ padding: 0px 9px 0px 9px;
+
+
+}
+
+div#buscador>input{
+   padding: 2px;
+   border-radius: 10px;
+   width: 17rem;
+   text-align: center;
+   
+   
+}
+/*nav*/
+nav#menu{
+    background-color: #1B3147;
+    flex: 100%;
+    display: none;
+	position: absolute;
+	top:7.41rem;
+	width: 22.5rem;
+}
+nav#menu>ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -30px;
+}
+nav#menu>ul>li{
+    text-align: center;
+    background-color: antiquewhite;
+    padding: 10px;
+    width: 15rem;
+    margin-top: 10px;
+}
+/*Politicas*/
+section#politicas{
+    display: flex;
+    flex-direction: column;
+}
+.polis{
+    flex: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 20px 10px 20px;
+}
+.polis h4{
+    text-align: center;
+    font-weight: bold;
+}
+.polis div{
+  background-color: #69b1fa3b;
+  border-radius: 10px;
+}
+.polis div p{
+   color: black;
+   padding: 15px;
+  }
+
+
+
+/*footer*/
+footer{
+    background-color: #69B1FA;
+    display: flex;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+form#pie{
+   display: flex;
+   flex-direction: column;
+   flex: 100%;
+   text-align: center;
+   align-items: center;
+   
+}
+form#pie>label{
+    margin-top: 9px;
+    
+}
+form#pie>input,textarea{
+    width: 14rem;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+form#pie>textarea{
+   
+    padding: 10px;
+    border-radius: 5px;
+}
+form#pie>button{
+    margin-top: 5px;
+    padding: 5px;
+    width: 5rem;
+    border-radius: 20px;
+    background-color: #FFD600 ;
+    border: 1px solid black;
+    font-weight: bold;
+}
+footer>div#abajo{
+display: flex;
+   margin-top: 10px;
+   flex: 100%;
+   justify-content: space-around;
+  
+   
+}
+footer>div#abajo>img{
+   
+   width: 20%;
+   
+}
+
+footer>div#abajo>div#redes-sociales{
+    margin-right: 15px;
+    padding-top: 10px;
+   
+}
+footer>div#abajo>div#politicas{
+   
+    margin-top: 12px;
+   
+}
+
+footer>div#abajo>div#politicas>ul>li{
+    font-size: 15px;
+    margin-top: 12px;
+   
+}
+/*boton volver*/
+div#volverarriba{
+	color:#454545;
+	font-family: 'Open Sans Condensed', sans-serif;
+	width: 2rem;
+	background-color: #69B1FA;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	position: fixed;
+	opacity: 0.7;
+	display:none;
+    border-radius: 40px;
+}
+div#volverarriba > a{
+	display: flex;
+	justify-content: space-between;
+	border:1px solid grey;
+    border-radius: 40px;
+	padding: 0.1rem ;
+}
