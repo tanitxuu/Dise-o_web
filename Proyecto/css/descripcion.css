@@ -1,256 +1,374 @@
-*{
+* {
     box-sizing: border-box;
 }
-body{
+
+body {
     font-size: 16px;
     margin: 0;
 }
-ul{
+
+ul {
     list-style: none;
 }
-a:hover{
-	cursor:pointer;
+
+a:hover {
+    cursor: pointer;
 }
-.Logo{
+
+.Logo {
     width: 15%;
     height: auto;
 }
-img{
+
+img {
     width: 100%;
     height: auto;
 }
-a{
+
+a {
     text-decoration: none;
     color: black;
 }
 
-span{
+span {
     font-size: 0.7rem;
     color: #2150E4;
     font-weight: bold;
 }
+
 /*Header*/
-header{
+header {
     background-color: #69B1FA;
-    display: flex;  
+    display: flex;
     flex-wrap: wrap;
-   
+
 }
-header>div#imglogo{
+
+header>div#imglogo {
     margin-top: 10px;
     flex: 100%;
     text-align: center;
 }
-header>div#menu-principal{
- display: flex;
- flex: 100%;
- justify-content: space-between;
- padding: 0px 9px 0px 9px;
+
+header>div#menu-principal {
+    display: flex;
+    flex: 100%;
+    justify-content: space-between;
+    padding: 0px 9px 0px 9px;
 
 
 }
 
-div#buscador>input{
-   padding: 2px;
-   border-radius: 10px;
-   width: 17rem;
-   text-align: center;
-   
-   
+div#buscador>input {
+    padding: 2px;
+    border-radius: 10px;
+    width: 17rem;
+    text-align: center;
+
+
 }
+
 /*nav*/
-nav#menu{
+nav#menu {
     background-color: #1B3147;
     flex: 100%;
     display: none;
-	position: absolute;
-	top:7.41rem;
-	width: 22.5rem;
+    position: absolute;
+    top: 7.41rem;
+    width: 22.5rem;
 }
-nav#menu>ul{
+
+nav#menu>ul {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: -30px;
 }
-nav#menu>ul>li{
+
+nav#menu>ul>li {
     text-align: center;
     background-color: antiquewhite;
     padding: 10px;
     width: 15rem;
     margin-top: 10px;
 }
+
 /*Titulo*/
-section#descripcion{
+section#descripcion {
     display: flex;
     flex-direction: column;
 }
-article{
+
+article {
     display: flex;
     flex-direction: column;
     text-align: center;
- 
-    
+
+
 }
-#titulo img{
+
+#titulo img {
     margin-top: 30px;
     width: 12rem;
     align-self: center;
 }
-#titu{
+
+#titu {
     display: flex;
     justify-content: space-around;
     margin: 5px;
-   
+
 }
-#titu img{
+
+#titu img {
     width: 2rem;
     position: relative;
     bottom: 2.3rem;
     right: 6px;
-   
-    
+
+
 }
-#visitas{
+
+#visitas {
     display: flex;
-    
+
 }
-#visitas label{
+
+#visitas label {
     text-decoration: underline;
-    
+
 }
-#capitulos{
+
+#capitulos {
     display: flex;
-  
+
 }
-#capitulos label{
+
+#capitulos label {
     text-decoration: underline;
-  
+
 }
+
 /*Descripcion*/
-h3{
+h3 {
     text-decoration: underline;
     margin-top: -10px;
 }
-#descripcionm{
+
+#descripcionm {
     background-color: #69b1fa3b;
     border-radius: 10px;
     margin: 0px 15px 30px 15px;
 }
-#descripcionm p{
-    padding: 0px 15px 15px 15px;
+
+#sipno {
+    padding: 0px 20px 10px 20px;
     text-align: start;
+    font-size: 0.8rem;
 }
+
 /*Informacion adicional*/
-#info p{
+#info p {
     text-align: start;
     margin: 0px 30px 50px 30px;
 }
-#info p span{
-   color: red;
-   font-weight: bold;
+
+#p2 {
+    color: red;
+    font-weight: bold;
+}
+
+#p1 {
+    font-size: 0.8rem;
 }
 
 /*Capitulos*/
-.fondo{
+
+.fondo {
     background-color: #69b1fa3b;
     border-radius: 10px;
-    margin: 0px 15px 30px 15px;
+    margin: 0px 20px 30px 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 }
+
+#botones {
+    flex: 100%;
+    margin-left: 8px;
+}
+
+button {
+    background-color: #ffd500c9;
+    border-radius: 20px;
+    font-size: 0.5rem;
+    padding: 6px;
+    width: 5rem;
+    border: 1px solid black;
+    
+    
+}
+button:nth-child(2){
+    margin-left: 3px;
+}
+button:hover{
+    background-color: #ffd5007e;
+}
+
+#temporadas {
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+nav>ul {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    right: 1.3rem;
+}
+
+nav>ul>li {
+    flex: 100%;
+    display: flex;
+    border-radius: 20px;
+    margin-top: 7px;
+
+}
+
+nav>ul>li>a {
+    flex: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #69B1FA;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+
+
+ul>li>a>span:first-child>img {
+    width: 0.6rem;
+    margin-right: 3px;
+}
+
+nav>ul#tempo2 {
+    display: none;
+}
+
+.numcap {
+    color: black;
+    font-size: 0.6rem;
+}
+
+.subido {
+    color: black;
+    opacity: 0.5;
+    font-size: 0.5rem;
+    margin-right: 4px;
+}
+
+
 /*footer*/
-footer{
+footer {
     background-color: #69B1FA;
     display: flex;
     margin-top: 15px;
     flex-wrap: wrap;
 }
-button{
-    background-color: #FFD600;
-    border-radius: 20px;
-    padding: 8px;
-    width: 7rem;
+
+form#pie {
+    display: flex;
+    flex-direction: column;
+    flex: 100%;
+    text-align: center;
+    align-items: center;
+
 }
 
-form#pie{
-   display: flex;
-   flex-direction: column;
-   flex: 100%;
-   text-align: center;
-   align-items: center;
-   
-}
-form#pie>label{
+form#pie>label {
     margin-top: 9px;
-    
+
 }
-form#pie>input,textarea{
+
+form#pie>input,
+textarea {
     width: 14rem;
     margin-top: 5px;
     border-radius: 5px;
 }
-form#pie>textarea{
-   
+
+form#pie>textarea {
+
     padding: 10px;
     border-radius: 5px;
 }
-form#pie>button{
+
+form#pie>button {
     margin-top: 5px;
     padding: 5px;
     width: 5rem;
     border-radius: 20px;
-    background-color: #FFD600 ;
+    background-color: #FFD600;
     border: 1px solid black;
     font-weight: bold;
 }
-footer>div#abajo{
-display: flex;
-   margin-top: 10px;
-   flex: 100%;
-   justify-content: space-around;
-  
-   
-}
-footer>div#abajo>img{
-   
-   width: 20%;
-   
+
+footer>div#abajo {
+    display: flex;
+    margin-top: 10px;
+    flex: 100%;
+    justify-content: space-around;
+
+
 }
 
-footer>div#abajo>div#redes-sociales{
+footer>div#abajo>img {
+
+    width: 20%;
+
+}
+
+footer>div#abajo>div#redes-sociales {
     margin-right: 15px;
     padding-top: 10px;
-   
-}
-footer>div#abajo>div#politicas{
-   
-    margin-top: 12px;
-   
+
 }
 
-footer>div#abajo>div#politicas>ul>li{
+footer>div#abajo>div#politicas {
+
+    margin-top: 12px;
+
+}
+
+footer>div#abajo>div#politicas>ul>li {
     font-size: 15px;
     margin-top: 12px;
-   
+
 }
+
 /*boton volver*/
-div#volverarriba{
-	color:#454545;
-	font-family: 'Open Sans Condensed', sans-serif;
-	width: 2rem;
-	background-color: #69B1FA;
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	text-align: center;
-	position: fixed;
-	opacity: 0.7;
-	display:none;
+div#volverarriba {
+    color: #454545;
+    font-family: 'Open Sans Condensed', sans-serif;
+    width: 2rem;
+    background-color: #69B1FA;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    position: fixed;
+    opacity: 0.7;
+    display: none;
     border-radius: 40px;
 }
-div#volverarriba > a{
-	display: flex;
-	justify-content: space-between;
-	border:1px solid grey;
+
+div#volverarriba>a {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid grey;
     border-radius: 40px;
-	padding: 0.1rem ;
+    padding: 0.1rem;
 }
