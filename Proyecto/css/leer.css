@@ -1,0 +1,464 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-size: 16px;
+    margin: 0;
+}
+ul{
+    list-style: none;
+}
+.itim-regular {
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+ }
+ .irish-grover-regular {
+    font-family: "Irish Grover", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a:hover{
+	cursor:pointer;
+}
+.Logo{
+    width: 15%;
+    height: auto;
+}
+img{
+    width: 100%;
+    height: auto;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+span{
+    font-size: 0.7rem;
+    color: #2150E4;
+    font-weight: bold;
+}
+/*Header*/
+header{
+    background-color: #69B1FA;
+    display: flex;  
+    flex-wrap: wrap;
+   
+}
+header>div#imglogo{
+    margin-top: 10px;
+    flex: 100%;
+    text-align: center;
+}
+header>div#menu-principal{
+ display: flex;
+ flex: 100%;
+ justify-content: space-between;
+ padding: 0px 9px 0px 9px;
+
+
+}
+
+div#buscador>input{
+   padding: 2px;
+   border-radius: 10px;
+   width: 15rem;
+   text-align: center;
+   
+   
+}
+/*nav*/
+nav#menu{
+    background-color: #1B3147;
+    flex: 100%;
+    display: none;
+	position: absolute;
+	top:8rem;
+	width: 100%;
+    z-index: 801;
+}
+nav#menu>ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -30px;
+}
+nav#menu>ul>li{
+    text-align: center;
+    background-color: antiquewhite;
+    padding: 10px;
+    width: 15rem;
+    margin-top: 10px;
+}
+/*Nombre*/
+article{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+article>h2{
+    margin-top: 40px;
+    font-family: 'Irish Grover';
+    font-weight: lighter;
+
+}
+.cap{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    margin-top: -9px;
+    font-family: 'Irish Grover';
+
+
+}
+.cap>select{
+    padding: 3px;
+    background-color:#D9D9D9 ;
+    font-family: 'Irish Grover';
+
+}
+.cap>img{
+    width: 2rem;
+    
+}
+.cap>a>img{
+    width: 100%;
+    height: auto;
+   
+    
+}
+.capanterior{
+    display: flex;
+    align-items: center;
+}
+.capsiguiente{
+    display: flex;
+    align-items: center;
+}
+#leer>img{
+    margin: 0;
+    padding: 0;
+}
+#tucomentario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:-35px ;
+    border-bottom:1px solid #FFD600;
+    padding: 20px;
+    
+}
+#tucomentario>form>label{
+    font-family: 'Itim';
+
+}
+#tucomentario>h4{
+    text-decoration: underline;
+    position: relative;
+    top: 15px;
+}
+#tucomentario>button{
+    margin-top: 2rem;
+    padding: 7px;
+    border-radius: 20px;
+    background-color: #FFD600 ;
+    border: 1px solid black;
+    font-weight: bold;
+    
+}
+#comentariosusu>ul{
+    display: flex;
+    flex-direction: column;
+    margin-right: 2rem;
+    
+}
+#comentariosusu>ul>li{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Itim';
+
+   
+}
+#comentariosusu>ul>li>img{
+   width: 2rem;
+   
+}
+#comentariosusu>ul>li>p{
+    font-size: 12px;
+   padding: 10px;
+   border: 1px solid black;
+   border-radius: 10px;
+   margin: 4px 20px 4px 20px;
+ 
+
+    
+ }
+/*footer*/
+footer{
+    background-color: #69B1FA;
+    display: flex;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    
+}
+
+form{
+   display: flex;
+   flex-direction: column;
+   flex: 100%;
+   text-align: center;
+   align-items: center;
+   
+}
+form>label{
+    margin-top: 9px;
+    
+}
+form>input,textarea{
+    width: 14rem;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+form>textarea{
+   
+    padding: 10px;
+    border-radius: 5px;
+}
+form>button{
+    margin-top: 5px;
+    padding: 5px;
+    width: 5rem;
+    border-radius: 20px;
+    background-color: #FFD600 ;
+    border: 1px solid black;
+    font-weight: bold;
+}
+footer>div#abajo{
+    display: flex;
+   margin-top: 10px;
+   flex: 100%;
+   justify-content: space-around;
+  
+   
+}
+footer>div#abajo>a>img{
+    width: 5rem;
+    
+ }
+
+footer>div#abajo>div#redes-sociales{
+    margin-right: 15px;
+    padding-top: 10px;
+   
+}
+footer>div#abajo>div#politicas{
+   
+    margin-top: 12px;
+   
+}
+
+footer>div#abajo>div#politicas>ul>li{
+    font-size: 15px;
+    margin-top: 12px;
+    font-family: 'Irish Grover';
+}
+
+/*boton volver*/
+div#volverarriba{
+	color:#454545;
+	font-family: 'Open Sans Condensed', sans-serif;
+	width: 2rem;
+	background-color: #69B1FA;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	position: fixed;
+	opacity: 0.7;
+	display:none;
+    border-radius: 40px;
+}
+div#volverarriba > a{
+	display: flex;
+	justify-content: space-between;
+	border:1px solid grey;
+    border-radius: 40px;
+	padding: 0.1rem ;
+}
+
+@media (min-width:720px) {
+    /*Header*/
+    #imglogo>a>img{
+        width: 13%;
+    }
+    header>div#menu-principal{
+        padding: 10px 20px 10px 20px;
+        align-items: center ;
+       }
+    div#hamburgesa>img{
+        width: 2.5rem;
+        
+     }
+    
+     div#usu>a>img{
+        width: 2.5rem; 
+     }
+    div#buscador>input{
+        padding: 4px;
+        width: 27rem;
+        font-size: 1.2rem;
+        
+     }
+     /*nav*/
+    nav#menu{
+        top:12.9rem;
+        z-index: 2;
+    }
+    
+    nav#menu>ul>li{
+        padding: 15px;
+        width: 25rem;
+        margin-top: 10px;
+        font-size: 1.5rem;
+    }
+   /*Nombre*/
+
+article>h2{
+   font-size: 3rem;
+
+}
+
+.cap>select{
+   
+    font-size: 1.5rem;
+
+}
+
+.cap>a>img{
+    width: 3rem;
+}
+.capsiguiente>img{
+    width: 3rem;
+}
+.capsiguiente>p{
+    font-size: 2rem;
+}
+.capanterior>img{
+    width: 3rem;
+}
+.capanterior>p{
+    font-size: 2rem;
+}
+#leer>img{
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+#tucomentario>h4{
+   font-size: 1.5rem;
+   
+}
+#tucomentario>button{
+   font-size: 2rem;
+   width: 2rem;
+    
+}
+#comentariosusu>ul{
+    display: flex;
+    flex-direction: column;
+    margin-right: 2rem;
+    
+}
+
+#comentariosusu>ul>li>img{
+   width: 3rem;
+   
+}
+#comentariosusu>ul>li>p{
+    font-size: 1.3rem;
+  
+    
+ }
+    /*footer*/
+    form{
+        display: flex;
+        flex-direction: column;
+        flex: 100%;
+        text-align: center;
+        align-items: center;
+        height: auto;
+        
+     }
+     form>label{
+         margin-top: 9px;
+         font-size: 1.5rem;
+         
+         
+     }
+     form>input,textarea{
+         width: 20rem;
+         margin-top: 5px;
+         border-radius: 5px;
+     }
+     form>input{
+        
+        padding: 10px;
+        border-radius: 5px;
+    }
+     form>textarea{
+        
+         padding: 30px;
+         border-radius: 5px;
+     }
+     form>button{
+         margin-top: 10px;
+         padding: 5px;
+         width: 9rem;
+         border-radius: 20px;
+         background-color: #FFD600 ;
+         border: 1px solid black;
+         font-weight: bold;
+     }
+     footer>div#abajo{
+         display: flex;
+        margin-top: 10px;
+        flex: 100%;
+        justify-content: space-between;
+       
+        
+     }
+     footer>div#abajo>a>img{
+         width: 8rem;
+         
+      }
+     
+     footer>div#abajo>div#redes-sociales{
+         margin-right: 5rem;
+         padding-top: 10px;
+        
+     }
+      
+     footer>div#abajo>div#redes-sociales>ul>li>a>img{
+       width: 3rem;
+       margin-right: -30px;
+    }
+     footer>div#abajo>div#politicas{
+        
+         margin-top: 20px;
+        
+     }
+     
+     footer>div#abajo>div#politicas>ul>li{
+         font-size: 1.5rem;
+         margin-top: 12px;
+         font-family: 'Irish Grover';
+     }
+     
+        
+    }

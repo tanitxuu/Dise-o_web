@@ -8,6 +8,11 @@ body{
 ul{
     list-style: none;
 }
+.itim-regular {
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+ }
 a:hover{
 	cursor:pointer;
 }
@@ -53,90 +58,176 @@ header>div#menu-principal{
 div#buscador>input{
    padding: 2px;
    border-radius: 10px;
-   width: 17rem;
+   width: 15rem;
    text-align: center;
    
    
 }
 /*nav*/
-nav#menu{
+nav#menu {
     background-color: #1B3147;
     flex: 100%;
     display: none;
-	position: absolute;
-	top:7.41rem;
-	width: 22.5rem;
+    position: absolute;
+    top: 8rem;
+    width: 100%;
+    z-index: 801;
 }
-nav#menu>ul{
+
+nav#menu>ul {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: -30px;
 }
-nav#menu>ul>li{
+
+nav#menu>ul>li {
     text-align: center;
     background-color: antiquewhite;
     padding: 10px;
     width: 15rem;
     margin-top: 10px;
 }
-/*Section imagen-principal*/
-section#imagen-principal article {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-section#imagen-principal article img{
-    width: 100%;
-    height: auto;
-    margin-top: 3px;
-}
-section#imagen-principal article button{
-    width: 10px;
-    height: 10px;
-    border-radius: 30px;
-    margin: 8px;
-    
 
-}
-section#imagen-principal article button:nth-child(1){
-    background-color: #69B1FA;
-   
-    
-}
+/*Slider*/
+
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .slider-wrapper li {
+    display: none;
+  }
+  
+  .slider-wrapper .current-slide {
+    display: block;
+  }
+  
+  
+  
+  .slider-wrapper img {
+    position: absolute;
+    height: auto;
+    top: 0;
+    left: 0;
+  }
+  
+  
+  /**
+   * ---[Caption] ---------------------- 
+   **/
+  
+  .slider-wrapper .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 10px;
+    color: #FFF;
+    opacity: 0;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+  }
+  
+  .slider-wrapper li:hover .caption {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .slider-wrapper h2 {
+    color: #00c5b9;
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-bottom: 6px;
+  }
+  
+  .slider-wrapper p {
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.4em;
+  }
+  
+  
+  /**
+   * ---[Botones-Control] ---------------------- 
+   **/
+  
+  .control-buttons {
+    margin-top: 15px;
+    text-align: center;
+  }
+  
+  .control-buttons li {
+      position: relative;
+      right: 13px;
+    cursor: pointer;
+    display: inline-block;
+    background: #424f66;
+    text-indent: -99999px;
+    height: 9px;
+    width: 9px;
+    margin: 0 6px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
+  
+  .control-buttons li.active {
+    background: #00c5b9;
+  }
+  
+  .authors {
+    text-align: center;
+    color: #7a8699;
+    display: block;
+    font-size: 1.6em;
+    font-weight: 300;
+    margin-top: 80px;
+    font-size: 300px;
+  }
 
 /*Cuerpo titulo*/
-div#titulo{
+div#titulo {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     margin: 2px;
 }
+div#titulo>div{
+    display: flex;
+    justify-content: space-around;
+   margin: 6px;
+}
+
 div#titulo h4{
     font-size: 0.9rem;
-    position: relative;
-    right: 1rem;
+   
 }
 div#titulo img{
     width: 1.5rem;
-    position: relative;
-    left: 20px;
-    bottom: 2px;
-
     
 }
-div#titulo option{
+
+div#titulo option {
     background-color: #1B3147;
     color: bisque;
-    
- }
-div#titulo select{
-   background-color: #69B1FA;
-   border-radius: 5px;
-   width: 7rem;
-   margin-right: 8px;
+
 }
+
+div#titulo select {
+    background-color: #69B1FA;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
 /*Cuerpo leer*/
 section#lectura{
     display: flex;
@@ -169,18 +260,27 @@ section#lectura{
     
  }
 
-.cap{
-   margin-top: -17px;
-   
+ h4{
+    font-family: 'Itim';
+    font-weight: lighter;
+}
+.cap {
+    margin-top: -17px;
+    font-family: 'Itim';
+    font-size: 14px;
+
+
 }
 
-.nuevocap{
+.nuevocap {
     margin-top: 2px;
     color: black;
     font-weight: bold;
     -webkit-text-stroke-width: 0.2px;
     -webkit-text-stroke-color: #FFD600;
-   
+    font-size: 16px;
+
+
 }
 section#lectura article:nth-child(17){
     flex-basis: 100%;
@@ -260,11 +360,10 @@ footer>div#abajo{
   
    
 }
-footer>div#abajo>img{
-   
-   width: 20%;
-   
-}
+footer>div#abajo>a>img{
+    width: 5rem;
+    
+ }
 
 footer>div#abajo>div#redes-sociales{
     margin-right: 15px;
@@ -280,8 +379,10 @@ footer>div#abajo>div#politicas{
 footer>div#abajo>div#politicas>ul>li{
     font-size: 15px;
     margin-top: 12px;
-   
+    font-family: 'Irish Grover';
+
 }
+
 /*boton volver*/
 div#volverarriba{
 	color:#454545;
@@ -304,3 +405,171 @@ div#volverarriba > a{
     border-radius: 40px;
 	padding: 0.1rem ;
 }
+@media (min-width:720px) {
+    /*Header*/
+    #imglogo>a>img{
+        width: 13%;
+    }
+    header>div#menu-principal{
+        padding: 10px 20px 10px 20px;
+        align-items: center ;
+       }
+    div#hamburgesa>img{
+        width: 2.5rem;
+        
+     }
+    
+     div#usu>a>img{
+        width: 2.5rem; 
+     }
+    div#buscador>input{
+        padding: 4px;
+        width: 27rem;
+        font-size: 1.2rem;
+        
+     }
+     /*nav*/
+    nav#menu{
+        top:12.9rem;
+        z-index: 2;
+    }
+    
+    nav#menu>ul>li{
+        padding: 15px;
+        width: 25rem;
+        margin-top: 10px;
+        font-size: 1.5rem;
+    }
+   /**/
+   /*Slider*/
+
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    height: 23rem;
+    overflow: hidden;
+}
+.control-buttons li {
+    
+    height: 15px;
+    width: 15px;
+   
+}
+/*titulo*/
+#titulo>div>img{
+    width: 3rem;
+}
+#titulo>div>h3{
+    font-size: 2rem;
+}
+#titulo>select{
+font-size: 1.45rem;
+width: 10rem;
+
+}
+section#lectura article button {
+    width: 16rem;
+   font-size: 1.2rem;
+
+
+}
+/*leer*/
+#lectura>article:nth-child(10){
+    display: none;
+}
+
+h4{
+    font-family: 'Itim';
+    font-weight: lighter;
+    font-size: 1.5rem;
+}
+.cap {
+    margin-top: -17px;
+    font-family: 'Itim';
+    font-size: 1.2rem;
+}
+
+.nuevocap {
+    font-size: 1.4rem;
+
+}
+#numeros>li>a{
+    font-size: 1.8rem;
+}
+    /*footer*/
+    form{
+        display: flex;
+        flex-direction: column;
+        flex: 100%;
+        text-align: center;
+        align-items: center;
+        height: auto;
+        
+     }
+     form>label{
+         margin-top: 9px;
+         font-size: 1.5rem;
+         
+         
+     }
+     form>input,textarea{
+         width: 20rem;
+         margin-top: 5px;
+         border-radius: 5px;
+     }
+     form>input{
+        
+        padding: 10px;
+        border-radius: 5px;
+    }
+     form>textarea{
+        
+         padding: 30px;
+         border-radius: 5px;
+     }
+     form>button{
+         margin-top: 10px;
+         padding: 5px;
+         width: 9rem;
+         border-radius: 20px;
+         background-color: #FFD600 ;
+         border: 1px solid black;
+         font-weight: bold;
+     }
+     footer>div#abajo{
+         display: flex;
+        margin-top: 10px;
+        flex: 100%;
+        justify-content: space-between;
+       
+        
+     }
+     footer>div#abajo>a>img{
+         width: 8rem;
+         
+      }
+     
+     footer>div#abajo>div#redes-sociales{
+         margin-right: 5rem;
+         padding-top: 10px;
+        
+     }
+      
+     footer>div#abajo>div#redes-sociales>ul>li>a>img{
+       width: 3rem;
+       margin-right: -30px;
+    }
+     footer>div#abajo>div#politicas{
+        
+         margin-top: 20px;
+        
+     }
+     
+     footer>div#abajo>div#politicas>ul>li{
+         font-size: 1.5rem;
+         margin-top: 12px;
+         font-family: 'Irish Grover';
+     }
+     
+        
+    }

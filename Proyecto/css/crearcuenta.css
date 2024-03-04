@@ -4,7 +4,14 @@
 body{
     font-size: 16px;
     margin: 0;
+    padding: 0;
 }
+.itim-regular {
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+ }
+  
 ul{
     list-style: none;
 }
@@ -34,6 +41,7 @@ header{
     background-color: #69B1FA;
     display: flex;  
     flex-wrap: wrap;
+    width: 100%;
    
 }
 header>div#imglogo{
@@ -46,14 +54,12 @@ header>div#menu-principal{
  flex: 100%;
  justify-content: space-between;
  padding: 0px 9px 0px 9px;
-
-
 }
 
 div#buscador>input{
    padding: 2px;
    border-radius: 10px;
-   width: 17rem;
+   width: 15rem;
    text-align: center;
    
    
@@ -64,8 +70,9 @@ nav#menu{
     flex: 100%;
     display: none;
 	position: absolute;
-	top:7.41rem;
-	width: 22.5rem;
+	top:8.2rem;
+	width: 100%;
+    z-index: 2;
 }
 nav#menu>ul{
     display: flex;
@@ -79,6 +86,7 @@ nav#menu>ul>li{
     padding: 10px;
     width: 15rem;
     margin-top: 10px;
+    font-family: 'Itim';
 }
 /*Crear cuenta*/
 section#crearcuenta{
@@ -89,6 +97,7 @@ section#crearcuenta{
 
 section#crearcuenta>h2{
    color: #69B1FA;
+   font-family: "Itim";
 }
 section#crearcuenta>form{
     display: flex;
@@ -107,7 +116,8 @@ section#crearcuenta>form>img{
     width: 1.8rem;
     position: relative;
     bottom: 33px;
-    left: 15rem;
+     left: 7rem;
+    z-index: 1;
      
    }
 #check{
@@ -119,6 +129,7 @@ section#crearcuenta>form>img{
 #check label{
   margin-left: 10px;
   font-size: 14px;
+    font-family: "Itim";
 }
 #inicio{
     padding: 12px;
@@ -128,6 +139,7 @@ section#crearcuenta>form>img{
     margin-top: 20px;
     font-weight: bold;
     width: 18rem;
+   
 }
 
 section#crearcuenta>div#botones>span{
@@ -139,6 +151,7 @@ section#crearcuenta>div#botones>span{
      -webkit-text-stroke-color: #FFD600;
      font-size: 1rem;
      text-decoration: underline;
+     
    }
 
 div#botones{
@@ -154,31 +167,35 @@ footer{
     display: flex;
     margin-top: 15px;
     flex-wrap: wrap;
+    width: 100%;
+    
 }
 
-form#pie{
+form{
    display: flex;
    flex-direction: column;
    flex: 100%;
    text-align: center;
    align-items: center;
+   height: auto;
    
 }
-form#pie>label{
+form>label{
     margin-top: 9px;
     
+    
 }
-form#pie>input,textarea{
+form>input,textarea{
     width: 14rem;
     margin-top: 5px;
     border-radius: 5px;
 }
-form#pie>textarea{
+form>textarea{
    
     padding: 10px;
     border-radius: 5px;
 }
-form#pie>button{
+form>button{
     margin-top: 5px;
     padding: 5px;
     width: 5rem;
@@ -188,18 +205,17 @@ form#pie>button{
     font-weight: bold;
 }
 footer>div#abajo{
-display: flex;
+    display: flex;
    margin-top: 10px;
    flex: 100%;
    justify-content: space-around;
   
    
 }
-footer>div#abajo>img{
-   
-   width: 20%;
-   
-}
+footer>div#abajo>a>img{
+    width: 5rem;
+    
+ }
 
 footer>div#abajo>div#redes-sociales{
     margin-right: 15px;
@@ -215,5 +231,125 @@ footer>div#abajo>div#politicas{
 footer>div#abajo>div#politicas>ul>li{
     font-size: 15px;
     margin-top: 12px;
+    font-family: 'Irish Grover';
+}
+
+@media (min-width:720px) {
+/*Header*/
+#imglogo>a>img{
+    width: 13%;
+}
+header>div#menu-principal{
+    padding: 10px 20px 10px 20px;
+    align-items: center ;
+   }
+div#hamburgesa>img{
+    width: 2.5rem;
+    
+ }
+
+ div#usu>a>img{
+    width: 2.5rem; 
+ }
+div#buscador>input{
+    padding: 4px;
+    width: 27rem;
+    font-size: 1.2rem;
+    
+ }
+ /*nav*/
+nav#menu{
+	top:12.9rem;
+    z-index: 2;
+}
+
+nav#menu>ul>li{
+    padding: 15px;
+    width: 25rem;
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+/*Crear cuenta*/
+section#crearcuenta>h2{
+  font-size: 2rem;
+}
+form{
+    width: 20rem;
+}
+/*footer*/
+form{
+    display: flex;
+    flex-direction: column;
+    flex: 100%;
+    text-align: center;
+    align-items: center;
+    height: auto;
+    
+ }
+ form>label{
+     margin-top: 9px;
+     font-size: 1.5rem;
+     
+     
+ }
+ form>input,textarea{
+     width: 20rem;
+     margin-top: 5px;
+     border-radius: 5px;
+ }
+ form>input{
+    
+    padding: 10px;
+    border-radius: 5px;
+}
+ form>textarea{
+    
+     padding: 30px;
+     border-radius: 5px;
+ }
+ form>button{
+     margin-top: 10px;
+     padding: 5px;
+     width: 9rem;
+     border-radius: 20px;
+     background-color: #FFD600 ;
+     border: 1px solid black;
+     font-weight: bold;
+ }
+ footer>div#abajo{
+     display: flex;
+    margin-top: 10px;
+    flex: 100%;
+    justify-content: space-between;
    
+    
+ }
+ footer>div#abajo>a>img{
+     width: 8rem;
+     
+  }
+ 
+ footer>div#abajo>div#redes-sociales{
+     margin-right: 5rem;
+     padding-top: 10px;
+    
+ }
+  
+ footer>div#abajo>div#redes-sociales>ul>li>a>img{
+   width: 3rem;
+   margin-right: -30px;
+}
+ footer>div#abajo>div#politicas{
+    
+     margin-top: 20px;
+    
+ }
+ 
+ footer>div#abajo>div#politicas>ul>li{
+     font-size: 1.5rem;
+     margin-top: 12px;
+     font-family: 'Irish Grover';
+ }
+ 
+    
 }

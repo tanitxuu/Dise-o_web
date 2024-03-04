@@ -4,10 +4,16 @@
 body{
     font-size: 16px;
     margin: 0;
+    padding: 0;
 }
 ul{
     list-style: none;
 }
+.itim-regular {
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+ }
 a:hover{
 	cursor:pointer;
 }
@@ -46,26 +52,28 @@ header>div#menu-principal{
  flex: 100%;
  justify-content: space-between;
  padding: 0px 9px 0px 9px;
-
-
 }
+header>div#menu-principal>a{
+border: 1px solid black;
+   }
 
 div#buscador>input{
    padding: 2px;
    border-radius: 10px;
-   width: 17rem;
+   width: 15rem;
    text-align: center;
    
    
 }
 /*nav*/
-nav#menu{
+nav#menu {
     background-color: #1B3147;
     flex: 100%;
     display: none;
-	position: absolute;
-	top:7.41rem;
-	width: 22.5rem;
+    position: absolute;
+    top: 8rem;
+    width: 100%;
+    z-index: 801;
 }
 nav#menu>ul{
     display: flex;
@@ -89,6 +97,7 @@ section#iniciarsesion{
 
 section#iniciarsesion>h2{
    color: #69B1FA;
+   font-family: "Itim";
 }
 section#iniciarsesion>form{
     display: flex;
@@ -107,7 +116,8 @@ section#iniciarsesion>form>img{
     width: 1.8rem;
     position: relative;
     bottom: 33px;
-    left: 15rem;
+    left: 7rem;
+    z-index: 1;
      
    }
 #check{
@@ -117,6 +127,7 @@ section#iniciarsesion>form>img{
 }
 #check label{
   margin-left: 4px;  
+  font-family: "Itim";
 }
 #inicio{
     padding: 12px;
@@ -162,7 +173,7 @@ footer{
     flex-wrap: wrap;
 }
 
-form#pie{
+form{
    display: flex;
    flex-direction: column;
    flex: 100%;
@@ -170,21 +181,21 @@ form#pie{
    align-items: center;
    
 }
-form#pie>label{
+form>label{
     margin-top: 9px;
     
 }
-form#pie>input,textarea{
+form>input,textarea{
     width: 14rem;
     margin-top: 5px;
     border-radius: 5px;
 }
-form#pie>textarea{
+form>textarea{
    
     padding: 10px;
     border-radius: 5px;
 }
-form#pie>button{
+form>button{
     margin-top: 5px;
     padding: 5px;
     width: 5rem;
@@ -194,18 +205,17 @@ form#pie>button{
     font-weight: bold;
 }
 footer>div#abajo{
-display: flex;
+    display: flex;
    margin-top: 10px;
    flex: 100%;
    justify-content: space-around;
   
    
 }
-footer>div#abajo>img{
-   
-   width: 20%;
-   
-}
+footer>div#abajo>a>img{
+    width: 5rem;
+    
+ }
 
 footer>div#abajo>div#redes-sociales{
     margin-right: 15px;
@@ -221,5 +231,122 @@ footer>div#abajo>div#politicas{
 footer>div#abajo>div#politicas>ul>li{
     font-size: 15px;
     margin-top: 12px;
-   
+    font-family: 'Irish Grover';
 }
+@media (min-width:720px) {
+    /*Header*/
+    #imglogo>a>img{
+        width: 13%;
+    }
+    header>div#menu-principal{
+        padding: 10px 20px 10px 20px;
+        align-items: center ;
+       }
+    div#hamburgesa>img{
+        width: 2.5rem;
+        
+     }
+    
+     div#usu>a>img{
+        width: 2.5rem; 
+     }
+    div#buscador>input{
+        padding: 4px;
+        width: 27rem;
+        font-size: 1.2rem;
+        
+     }
+     /*nav*/
+    nav#menu{
+        top:12.9rem;
+        z-index: 2;
+    }
+    
+    nav#menu>ul>li{
+        padding: 15px;
+        width: 25rem;
+        margin-top: 10px;
+        font-size: 1.5rem;
+    }
+    /*Crear cuenta*/
+    section#iniciarsesion>h2{
+      font-size: 2rem;
+    }
+    form{
+        width: 20rem;
+    }
+    /*footer*/
+    form{
+        display: flex;
+        flex-direction: column;
+        flex: 100%;
+        text-align: center;
+        align-items: center;
+        height: auto;
+        
+     }
+     form>label{
+         margin-top: 9px;
+         font-size: 1.5rem;
+         
+         
+     }
+     form>input,textarea{
+         width: 20rem;
+         margin-top: 5px;
+         border-radius: 5px;
+     }
+     form>input{
+        
+        padding: 10px;
+        border-radius: 5px;
+    }
+     form>textarea{
+        
+         padding: 30px;
+         border-radius: 5px;
+     }
+     form>button{
+         margin-top: 10px;
+         padding: 5px;
+         width: 9rem;
+         border-radius: 20px;
+         background-color: #FFD600 ;
+         border: 1px solid black;
+         font-weight: bold;
+     }
+     footer>div#abajo{
+         display: flex;
+        margin-top: 10px;
+        flex: 100%;
+        justify-content: space-between;
+       
+        
+     }
+     footer>div#abajo>a>img{
+         width: 8rem;
+         
+      }
+     
+     footer>div#abajo>div#redes-sociales{
+         margin-right: 5rem;
+         padding-top: 10px;
+        
+     }
+      
+     footer>div#abajo>div#redes-sociales>ul>li>a>img{
+       width: 3rem;
+       margin-right: -30px;
+    }
+     footer>div#abajo>div#politicas{
+        
+         margin-top: 20px;
+        
+     }
+     
+     footer>div#abajo>div#politicas>ul>li{
+         font-size: 1.5rem;
+         margin-top: 12px;
+         font-family: 'Irish Grover';
+     }
+    }    

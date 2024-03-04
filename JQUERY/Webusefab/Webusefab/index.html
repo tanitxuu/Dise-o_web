@@ -42,10 +42,31 @@
     </script>
 
 </head>
+<script>
+    $(document).ready(function(){
+            $('#desplazable :ul').focusin(function(){		
+                $(this).css({'background-color':'pink'});
+                
+                
+            })
+            $('#hola :input').focusout(function(){		
+                $(this).css({'background-color':'white'});
+                
+            })
+            $('nav#menu-principal').on({
+                click: function(){
+                    $('ul#menu').slideToggle('slow',function(){
+                        
+                    })
+                }
+            })
+        });
+</script>
+
 
 <body>
-
-    <ul id="menu">
+    <div class="siderbar">  
+        <ul id="menu">
         <li><a href="#">BOTAS <span><i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
             <ul>
                 <li><a href="#">Todas las Botas</a></li>
@@ -129,6 +150,8 @@
         <li><a href="#">LOOKS</a></li>
         <li><a href="#">OFERTAS</a></li>
     </ul>
+</div>
+
 
 
     <div id="oscuro"></div>
