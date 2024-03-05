@@ -4,11 +4,11 @@
 <head>
     <title>JUSTFAB</title>
     <meta charset="utf-8">
-    <meta content="Escribe tu nombre y apellidos" name="author" >
-    <meta content="Diseño de Aplicaciones Web" name="description" >
-    <meta content="diseño web, responsive web design" name="keywords" >
-    <meta name="robots" content="index, follow" >
-    <meta name="lang" content="es-ES" >
+    <meta content="Escribe tu nombre y apellidos" name="author">
+    <meta content="Diseño de Aplicaciones Web" name="description">
+    <meta content="diseño web, responsive web design" name="keywords">
+    <meta name="robots" content="index, follow">
+    <meta name="lang" content="es-ES">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -16,37 +16,121 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="estilos-justfab.css">
-    <script src="jq/jquery-3.3.1.min.js"></script>
-    <script src="jq/script.js"></script>
-    <script src="inc/jquery.mb.CSSAnimate.js"></script>
-    <script src="inc/jquery.mb.browser.min.js"></script>
-   
-</head>
-<script>
-    $(document).ready(function(){
-            $('#desplazable :ul').focusin(function(){		
-                $(this).css({'background-color':'pink'});
-                
-                
-            })
-            $('#hola :input').focusout(function(){		
-                $(this).css({'background-color':'white'});
-                
-            })
-            $('nav#menu-principal').on({
-                click: function(){
-                    $('ul#menu').slideToggle('slow',function(){
-                        
-                    })
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $(document).on("scroll", function () {
+
+                if (desplazamientoActual > 200) {
+                    $("header").addClass('.header');
+                } else {
+                    $("header").css("position", "static");
+                }
+
+                if ($(document).scrollTop() > 400 && $("#volverarriba").css("display") == "none") {
+                    controlArriba.fadeIn(300);
+                }
+
+                if ($(document).scrollTop() < 400 && $("#volverarriba").css("display") == "block") {
+                    controlArriba.fadeOut(300);
+                }
+
+
+            });
+
+            $("nav#menu-principal>span").on({
+
+                click: function () {
+                    if ($("ul#menu").css("left") === "-320px") {
+                        $("ul#menu").css("left", "0");
+                        $("div#desplazable").css("left", "18rem")
+                        $("div#oscuro").fadeIn()
+                    } else {
+                        $("ul#menu").css("left", "-20rem");
+                        $("div#desplazable").css("left", "0")
+                        $("div#oscuro").fadeOut();
+                    }
                 }
             })
-        });
-</script>
 
+            $("div#oscuro").on({
+                click: function () {
+                    $("ul#menu").css("left", "-22rem");
+                    $("div#desplazable").css("left", "0")
+                    $("div#oscuro").fadeOut();
+                }
+            })
+
+            $("ul#menu>li>a").on({
+                click: function () {
+                    if ($(this).next().css("display") === "none") {
+                        $("ul#menu>li>ul").css("display", "none");
+                        $("ul#menu>li>a").find("i").css({
+                            "transform": "rotate(0)",
+                            "transition": "transform .25s ease ",
+                        });
+                        $(this).next().fadeIn();
+                        $(this).find("i").css({
+                            "transform": "rotate(180deg)",
+                            "transition": "transform .25s ease ",
+                        });
+                    } else {
+                        $(this).next().fadeOut();
+                        $(this).find("i").css({
+                            "transform": "rotate(0deg)",
+                            "transition": "transform .25s ease ",
+                        });
+                    }
+                }
+            })
+
+            $('article.item img').on({
+                mouseenter: function () {
+                    var $img = $(this);
+                    $img.data('timeout', setTimeout(function () {
+                        $img.attr("src", $img.attr('src').replace('.jpg', '-1.jpg'));
+                    }, 400));
+                }
+            });
+
+            $('article.item img').on({
+                mouseleave: function(){
+                var $img = $(this);
+                clearTimeout($img.data('timeout'));
+                $img.attr("src", $img.attr('src').replace('-1.jpg', '.jpg'));}
+            });
+
+
+            $("#volverarriba").on({
+                click: function () {
+                    $(document).scrollTop(0);
+                }
+            })
+
+            $("article.item a:last-child .comprar").hide();
+
+
+            $("article.item").on({
+                mouseenter: function () {
+                    $("a:last-child .comprar", this).show();
+                },
+                mouseleave: function () {
+                    $("a:last-child .comprar", this).hide();
+
+                }
+            });
+        });
+
+
+
+    </script>
+
+</head>
 
 <body>
-    <div class="siderbar">  
-        <ul id="menu">
+
+    <ul id="menu">
         <li><a href="#">BOTAS <span><i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
             <ul>
                 <li><a href="#">Todas las Botas</a></li>
@@ -130,8 +214,6 @@
         <li><a href="#">LOOKS</a></li>
         <li><a href="#">OFERTAS</a></li>
     </ul>
-</div>
-
 
 
     <div id="oscuro"></div>
@@ -181,12 +263,49 @@
 
         <!--Contenido principal con los productos -->
         <main>
+            <div class="slider">
 
+            </div>
             <article class="item">
                 <a href="#">
                     <h3>XARENI ADVOCAT</h3>
                 </a>
                 <p>145€</p>
+                <button>Comprar</button>
+                <a href="#">
+                    <picture><img src="img/zapato1.jpg" alt="ZAPATO XARENI ADVOCAT" width="380" height="524"></picture>
+                    <span class="comprar">COMPRAR</span>
+                </a>
+
+            </article>
+            <article class="item">
+                <a href="#">
+                    <h3>COSTA RICA</h3>
+                </a>
+                <p>145€</p>
+                <button>Comprar</button>
+                <a href="#">
+                    <picture><img src="img/zapato2.jpg" alt="ZAPATO COSTA RICA" width="380" height="524"></picture>
+                    <span class="comprar">COMPRAR</span>
+                </a>
+            </article>
+            <article class="item">
+                <a href="#">
+                    <h3>VALS</h3>
+                </a>
+                <p> 139€</p>
+                <button>Comprar</button>
+                <a href="#">
+                    <picture><img src="img/zapato3.jpg" alt="ZAPATO VALS" width="380" height="524"></picture>
+                    <span class="comprar">COMPRAR</span>
+                </a>
+            </article>
+            <article class="item">
+                <a href="#">
+                    <h3>XARENI ADVOCAT</h3>
+                </a>
+                <p>145€</p>
+                <button>Comprar</button>
                 <a href="#">
                     <picture><img src="img/zapato1.jpg" alt="ZAPATO XARENI ADVOCAT" width="380" height="524"></picture>
                     <span class="comprar">COMPRAR</span>
@@ -197,6 +316,7 @@
                     <h3>COSTA RICA</h3>
                 </a>
                 <p>145€</p>
+                <button>Comprar</button>
                 <a href="#">
                     <picture><img src="img/zapato2.jpg" alt="ZAPATO COSTA RICA" width="380" height="524"></picture>
                     <span class="comprar">COMPRAR</span>
@@ -207,36 +327,7 @@
                     <h3>VALS</h3>
                 </a>
                 <p> 139€</p>
-                <a href="#">
-                    <picture><img src="img/zapato3.jpg" alt="ZAPATO VALS" width="380" height="524"></picture>
-                    <span class="comprar">COMPRAR</span>
-                </a>
-            </article>
-            <article class="item">
-                <a href="#">
-                    <h3>XARENI ADVOCAT</h3>
-                </a>
-                <p>145€</p>
-                <a href="#">
-                    <picture><img src="img/zapato1.jpg" alt="ZAPATO XARENI ADVOCAT" width="380" height="524"></picture>
-                    <span class="comprar">COMPRAR</span>
-                </a>
-            </article>
-            <article class="item">
-                <a href="#">
-                    <h3>COSTA RICA</h3>
-                </a>
-                <p>145€</p>
-                <a href="#">
-                    <picture><img src="img/zapato2.jpg" alt="ZAPATO COSTA RICA" width="380" height="524"></picture>
-                    <span class="comprar">COMPRAR</span>
-                </a>
-            </article>
-            <article class="item">
-                <a href="#">
-                    <h3>VALS</h3>
-                </a>
-                <p> 139€</p>
+                <button>Comprar</button>
                 <a href="#">
                     <picture><img src="img/zapato3.jpg" alt="ZAPATO VALS" width="380" height="524"></picture>
                     <span class="comprar">COMPRAR</span>
@@ -247,6 +338,7 @@
                     <h3>COSTA RICA</h3>
                 </a>
                 <p>145€</p>
+                <button>Comprar</button>
                 <a href="#">
                     <picture><img src="img/zapato2.jpg" alt="ZAPATO COSTA RICA" width="380" height="524"></picture>
                     <span class="comprar">COMPRAR</span>
@@ -257,6 +349,7 @@
                     <h3>VALS</h3>
                 </a>
                 <p> 139€</p>
+                <button>Comprar</button>
                 <a href="#">
                     <picture><img src="img/zapato3.jpg" alt="ZAPATO VALS" width="380" height="524"></picture>
                     <span class="comprar">COMPRAR</span>
@@ -267,6 +360,7 @@
                     <h3>COSTA RICA</h3>
                 </a>
                 <p>145€</p>
+                <button>Comprar</button>
                 <a href="#">
                     <picture><img src="img/zapato2.jpg" alt="ZAPATO COSTA RICA" width="380" height="524"></picture>
                     <span class="comprar">COMPRAR</span>
@@ -277,6 +371,7 @@
                     <h3>VALS</h3>
                 </a>
                 <p> 139€</p>
+
                 <a href="#">
                     <picture><img src="img/zapato3.jpg" alt="ZAPATO VALS" width="380" height="524"></picture>
                     <span class="comprar">COMPRAR</span>
@@ -302,7 +397,8 @@
                 </ul>
             </nav>
         </footer>
-        <div id="volverarriba"><a href="#top">VOLVER ARRIBA <span><i class="fa fa-sort-asc" aria-hidden="true"></i></span></a></div>
+        <div id="volverarriba"><a href="#top">VOLVER ARRIBA <span><i class="fa fa-sort-asc"
+                        aria-hidden="true"></i></span></a></div>
     </div>
 </body>
 
