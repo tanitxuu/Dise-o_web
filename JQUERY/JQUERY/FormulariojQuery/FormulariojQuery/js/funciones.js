@@ -1,41 +1,46 @@
 $(document).ready(function() {
 
-
-
-
-    $(".errores").hide(); //Escondo los errores a lo primero
+    $(".errores").hide();
     
 
     /*1-Cuando todos los campos requeridos pierdan el foco, se debe comprobar si la longitud del dicho campo es 0. En caso afirmativo, 
     debe aparecer justo debajo del campo, sin que se mueva  nada de la interfaz, un mensaje en rojo indicando este error. 
     Cuando aparezca un nuevo error no se deben borrar los anteriores. Cuando la condición de error no se cumpla, se debe eliminar dicho mensaje.*/
 
-    $("input, textarea").focusin(function() { //Cuando tiene el foco en el input o textarea
-        $(this).siblings(".errores").hide() //Escondo el error
-    });
-
-
-    $("input, textarea").focusout(function() {
-        if ($(this).val().trim().length === 0) { //Si esta vacio es decir longitud cero
-            
-            $(this).siblings(".errores").show() //Aparece error
+    $("input, textarea").on({
+        focusin:function(){ 
+            $(this).siblings(".errores").hide()
         }
     });
+    
+
+
+    $("input, textarea").on({
+        focusout:function() {
+            if ($(this).val().trim().length === 0) { 
+                $(this).siblings(".errores").show() 
+            }
+        }
+    });
+    
 
     
-    $("#btnError").click(function() {
+    $("#btnError").on({
+        click:function() {
         
-        $('input, textarea').each(function() {
-            
-            if ($(this).val().trim().length === 0) { //Si esta vacio es decir longitud cero
-
-                $(this).siblings(".errores").show() //Aparece error
-
-            } else {
-                $(this).siblings(".errores").hide() //Escondo el error
-            }
-        });
-    });
+            $('input, textarea').each(function() {
+                
+                if ($(this).val().trim().length === 0) { //Si esta vacio es decir longitud cero
+                    
+                    $(this).siblings(".errores").show() //Aparece error
+    
+                } else {
+                    $(this).siblings(".errores").hide() //Escondo el error
+                }
+            });
+        }
+    })
+    
 
     
 
@@ -45,13 +50,14 @@ $(document).ready(function() {
     $("textarea").on("input", function () {
         let caracterTexto = $(this).val().length;
         let caracterMax = $(this).attr("maxlength");
-        $("#ncaracteres").text( "Has escrito " + caracterTexto + " caracteres de " + caracterMax);
+        let resto = caracterMax-caracterTexto
+        $("#ncaracteres").text( "Dispone de  " + resto + " caracteres");
     });
 
 
     /*4-El Plugin jQuery DatePicker puede ser interesante ya que hay navegadores que no implementan de forma nativa mostrar un calendario en un campo de tipo fecha. 
     Investiga su uso y funcionamiento. Pruébalo en tu formulario.*/
-    $( function() { $( "#fechas" ).datepicker();}); //Inicializo input de fechas 
+    $( function() { $( "#fechas" ).datepicker();}); 
 
 
 });

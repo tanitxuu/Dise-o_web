@@ -28,16 +28,14 @@ div#oscuro {
     display: none;
 }
 
-a>span.compra {
-    position: absolute;
-    bottom: 0;
-    z-index: 20;
-    background-color: #222222;
-    color: white;
-    border: 0;
-    padding: 1rem 0;
-    width: 100%;
-    display: none;
+.comprar{
+    position: relative;
+    bottom: 3.4rem;
+    color: black;
+    background-color: bisque;
+    padding: 5px;
+    border-radius: 20px;
+    left: 1rem;
 
 }
 a>span.compra:hover {
