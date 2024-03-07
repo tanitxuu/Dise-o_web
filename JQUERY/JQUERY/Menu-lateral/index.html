@@ -15,30 +15,35 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="estilos-justfab.css">
+    <link rel="stylesheet" type="text/css" href="./css/estilos-justfab.css">
     <script src="jquery-3.7.1.min.js"></script>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="sliderjs/lightslider.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/lightslider.css">
+
     <script>
 
         $(document).ready(function () {
-            $(document).on("scroll", function () {
 
-                if (desplazamientoActual > 200) {
-                    $("header").addClass('.header');
-                } else {
-                    $("header").css("position", "static");
+
+            //Escondo el boton al principio
+            $(".comprar").hide()
+
+            //Volver arriba
+            $(window).on("scroll", function () {
+                if ($(this).scrollTop() > 400 && $("#volverarriba").css("display") === "none") {
+
+                    $('#volverarriba').css("display", "block")
+
+                } else if ($(this).scrollTop() < 400) {
+                    $('#volverarriba').css("display", "none")
                 }
-
-                if ($(document).scrollTop() > 400 && $("#volverarriba").css("display") == "none") {
-                    controlArriba.fadeIn(300);
-                }
-
-                if ($(document).scrollTop() < 400 && $("#volverarriba").css("display") == "block") {
-                    controlArriba.fadeOut(300);
-                }
-
 
             });
 
+            //Para el menu 
             $("nav#menu-principal>span").on({
 
                 click: function () {
@@ -61,6 +66,10 @@
                     $("div#oscuro").fadeOut();
                 }
             })
+
+
+            let svg = $(this).find(".fa-angle-down");
+
 
             $("ul#menu>li>a").on({
                 click: function () {
@@ -85,43 +94,32 @@
                 }
             })
 
-            $('article.item img').on({
+
+
+
+
+            //Para el boton de comprar
+            $("article.item").on({
                 mouseenter: function () {
-                    var $img = $(this);
-                    $img.data('timeout', setTimeout(function () {
-                        $img.attr("src", $img.attr('src').replace('.jpg', '-1.jpg'));
-                    }, 400));
-                }
-            });
-
-            $('article.item img').on({
-                mouseleave: function(){
-                var $img = $(this);
-                clearTimeout($img.data('timeout'));
-                $img.attr("src", $img.attr('src').replace('-1.jpg', '.jpg'));}
-            });
-
-
-            $("#volverarriba").on({
-                click: function () {
-                    $(document).scrollTop(0);
-                }
-            })
-
-            //$("article.item a:last-child .comprar").hide();
-
-
-         /*   $("article.item").on({
-                mouseenter: function () {
-                    $("a:last-child .comprar", this).show();
+                    $(".comprar", this).show();
                 },
                 mouseleave: function () {
-                    $("a:last-child .comprar", this).hide();
+                    $(".comprar", this).hide();
 
                 }
-            });*/
+            });
         });
+     
 
+        //Plugin de slider
+        $(document).ready(function () {
+            $("#lightSlider").lightSlider({
+                item:1, //le especifico que vaya de 1 en 1
+                auto: true, // le especifico que se pasen automaticamente
+                speed: 2000, //le indico la velocidad a la que se desplaza 
+                loop: true, //le indico que se repita en bucle
+            });
+        });
 
 
     </script>
@@ -262,31 +260,32 @@
 
 
         <!--Contenido principal con los productos -->
+        <div id="sliderplugin">
+            <h1>PLUGIN LIGHTSLIDER</h1>
+            <ul id="lightSlider">
+                <li><img src="./img/zapato1.jpg" alt="zapato1"></li>
+                <li><img src="./img/zapato2.jpg" alt="zapato2"></li>
+                <li><img src="./img/zapato3.jpg" alt="zapato3"></li>
+            </ul>
+        </div>
+     
         <main>
-            <div class="slider">
 
-            </div>
-            <article class="item">
-                <a href="#">
-                    <h3>XARENI ADVOCAT</h3>
-                </a>
-                <p>145€</p>
-                <button>Comprar</button>
-                <a href="#">
-                    <picture><img src="img/zapato1.jpg" alt="ZAPATO XARENI ADVOCAT" width="380" height="524"></picture>
-                    <button class="comprar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z"></path></svg></button>
-                </a>
+           
 
-            </article>
             <article class="item">
                 <a href="#">
                     <h3>COSTA RICA</h3>
                 </a>
                 <p>145€</p>
-                <button>Comprar</button>
                 <a href="#">
                     <picture><img src="img/zapato2.jpg" alt="ZAPATO COSTA RICA" width="380" height="524"></picture>
-                    <button class="comprar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z"></path></svg></button>
+                    <button class="comprar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                        <path
+                            d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z">
+                        </path>
+                    </svg></button>
                 </a>
             </article>
             <article class="item">
@@ -294,10 +293,14 @@
                     <h3>VALS</h3>
                 </a>
                 <p> 139€</p>
-                <button>Comprar</button>
                 <a href="#">
                     <picture><img src="img/zapato3.jpg" alt="ZAPATO VALS" width="380" height="524"></picture>
-                    <button class="comprar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z"></path></svg></button>
+                    <button class="comprar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                        <path
+                            d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z">
+                        </path>
+                    </svg></button>
                 </a>
             </article>
             <article class="item">
@@ -305,10 +308,14 @@
                     <h3>XARENI ADVOCAT</h3>
                 </a>
                 <p>145€</p>
-                <button>Comprar</button>
                 <a href="#">
                     <picture><img src="img/zapato1.jpg" alt="ZAPATO XARENI ADVOCAT" width="380" height="524"></picture>
-                    <button class="comprar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z"></path></svg></button>
+                    <button class="comprar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                        <path
+                            d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z">
+                        </path>
+                    </svg></button>
                 </a>
             </article>
             <article class="item">
@@ -316,10 +323,14 @@
                     <h3>COSTA RICA</h3>
                 </a>
                 <p>145€</p>
-                <button>Comprar</button>
                 <a href="#">
                     <picture><img src="img/zapato2.jpg" alt="ZAPATO COSTA RICA" width="380" height="524"></picture>
-                    <button class="comprar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z"></path></svg></button>
+                    <button class="comprar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                        <path
+                            d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z">
+                        </path>
+                    </svg></button>
                 </a>
             </article>
             <article class="item">
@@ -327,10 +338,14 @@
                     <h3>VALS</h3>
                 </a>
                 <p> 139€</p>
-                <button>Comprar</button>
                 <a href="#">
                     <picture><img src="img/zapato3.jpg" alt="ZAPATO VALS" width="380" height="524"></picture>
-                    <button class="comprar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z"></path></svg></button>
+                    <button class="comprar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                        <path
+                            d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z">
+                        </path>
+                    </svg></button>
                 </a>
             </article>
             <article class="item">
@@ -338,10 +353,14 @@
                     <h3>COSTA RICA</h3>
                 </a>
                 <p>145€</p>
-                <button>Comprar</button>
                 <a href="#">
                     <picture><img src="img/zapato2.jpg" alt="ZAPATO COSTA RICA" width="380" height="524"></picture>
-                    <button class="comprar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z"></path></svg></button>
+                    <button class="comprar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                        <path
+                            d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z">
+                        </path>
+                    </svg></button>
                 </a>
             </article>
             <article class="item">
@@ -349,10 +368,14 @@
                     <h3>VALS</h3>
                 </a>
                 <p> 139€</p>
-                <button>Comprar</button>
                 <a href="#">
                     <picture><img src="img/zapato3.jpg" alt="ZAPATO VALS" width="380" height="524"></picture>
-                    <button class="comprar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z"></path></svg></button>
+                    <button class="comprar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                        <path
+                            d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z">
+                        </path>
+                    </svg></button>
                 </a>
             </article>
             <article class="item">
@@ -360,10 +383,14 @@
                     <h3>COSTA RICA</h3>
                 </a>
                 <p>145€</p>
-                <button>Comprar</button>
                 <a href="#">
                     <picture><img src="img/zapato2.jpg" alt="ZAPATO COSTA RICA" width="380" height="524"></picture>
-                    <button class="comprar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z"></path></svg></button>
+                    <button class="comprar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                        <path
+                            d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z">
+                        </path>
+                    </svg></button>
                 </a>
             </article>
             <article class="item">
@@ -374,7 +401,12 @@
 
                 <a href="#">
                     <picture><img src="img/zapato3.jpg" alt="ZAPATO VALS" width="380" height="524"></picture>
-                    <button class="comprar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z"></path></svg></button>
+                    <button class="comprar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                        <path
+                            d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z">
+                        </path>
+                    </svg></button>
                 </a>
             </article>
         </main>

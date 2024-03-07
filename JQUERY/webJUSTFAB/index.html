@@ -47,16 +47,28 @@
 			});
 
 			//tercera
-			$("ul#menu > li").on("click", function () {
-				var $arrowIcon = $(this).find('.fa-angle-down');
-				$('ul#menu > li').not(this).children('ul').slideUp();
-				if ($(this).children('ul').is(':hidden')) {
-					$(this).children('ul').slideDown();
-					$arrowIcon.css({ transform: 'rotate(180deg)', transition: 'transform 0.5s ease' });
-					$(this).children('ul').slideUp();
-					$arrowIcon.css({ transform: 'rotate(0deg)', transition: 'transform 0.5s ease' });
-				}
-			});
+			$("ul#menu>li>a").on({
+                click: function () {
+                    if ($(this).next().css("display") === "none") {
+                        $("ul#menu>li>ul").css("display", "none");
+                        $("ul#menu>li>a").find("i").css({
+                            "transform": "rotate(0)",
+                            "transition": "transform .25s ease ",
+                        });
+                        $(this).next().fadeIn();
+                        $(this).find("i").css({
+                            "transform": "rotate(180deg)",
+                            "transition": "transform .25s ease ",
+                        });
+                    } else {
+                        $(this).next().fadeOut();
+                        $(this).find("i").css({
+                            "transform": "rotate(0deg)",
+                            "transition": "transform .25s ease ",
+                        });
+                    }
+                }
+            })
 			//cuarta
 			$(window).on('scroll', function () {
 				if ($(this).scrollTop() > 50) {
@@ -219,7 +231,72 @@
 		<p id="promo"><a href="#">-50% EN TU PRIMER ARTÍCULO</a></p>
 	</header>
 	<!--Contenido principal con los productos -->
+	<section id="slider" class="contenedor-slider">
+		<h2>Slider-Mejorado</h2>
+		<!--Añadimos los iconos para controlar las imagenes-->
+		<div id="estilo-botones">
+			<svg class="anterior" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M16 16V8l-5 4zM9 8v8h2V8z"></path></svg>
+			<svg class="siguiente" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="m8 16 5-4-5-4zm5-4v4h2V8h-2z"></path></svg>
+		
+		</div>
+		<ul class="slider-wrapper">
+		<li class="current-slide">
+			<!--<img src="http://i9.photobucket.com/albums/a88/creaticode/1_zpsc6871490.jpg" title="" alt="">-->
+			<img src="https://c2.staticflickr.com/6/5094/5531620171_82185d6285_z.jpg" width="640" height="419">
+
+			<div class="caption">
+				<h2 class="slider-title">Diseño web</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, placeat est. Alias illo hic quo nobis, aspernatur iste ut voluptate.</p>
+			</div>
+		</li>
+
+		<li>
+			<!--<img src="http://i9.photobucket.com/albums/a88/creaticode/2_zps6ccd36bd.jpg" title="" alt="">-->
+			<img src="https://c2.staticflickr.com/2/1142/5112412572_6b07684fd6_z.jpg">
+
+			<div class="caption">
+				<h2 class="slider-title">Diseño Responsive</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo iusto placeat aliquid tempore harum, similique!</p>
+			</div>
+		</li>
+
+		<li>
+			<img src="https://c1.staticflickr.com/9/8360/8276578922_f65a266891_z.jpg" title="" alt="">
+
+			<div class="caption">
+				<h2 class="slider-title">Identidad Corporativa</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dicta laudantium voluptatem minima! Dolorum tempore dolores excepturi omnis provident. Commodi quis aperiam maiores, dolore a perferendis!</p>
+			</div>
+		</li>
+
+		<li>
+			<img src="https://c2.staticflickr.com/4/3534/4569643612_929f475102_z.jpg" title="" alt="">
+
+			<div class="caption">
+				<h2 class="slider-title">Desarrollo Web</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolore dignissimos laudantium.</p>
+			</div>
+		</li>
+		</ul>
+		
+		
+		<!-- Controles de Navegacion -->
+		
+		<ul id="control-buttons" class="control-buttons">
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<div class="bolitas-fotos">
+			<img src="https://c2.staticflickr.com/6/5094/5531620171_82185d6285_z.jpg" width="640" height="419" data-index="0">
+			<img src="https://c2.staticflickr.com/2/1142/5112412572_6b07684fd6_z.jpg" data-index="1" >
+			<img src="https://c1.staticflickr.com/9/8360/8276578922_f65a266891_z.jpg" data-index="2" >
+			<img src="https://c2.staticflickr.com/4/3534/4569643612_929f475102_z.jpg" data-index="3" >
+		</div>
+	
+	</section>
 	<main>
+		
 		<article class="item">
 			<a href="#">
 				<h3>XARENI ADVOCAT</h3>
@@ -310,6 +387,10 @@
 				<picture><img src="img/zapato3.jpg" alt="ZAPATO VALS" width="380" height="524"></picture>
 			</a>
 		</article>
+		
+		
+			
+		
 	</main>
 	<!--Pie de página -->
 	<footer>

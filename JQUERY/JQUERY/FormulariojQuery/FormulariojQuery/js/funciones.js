@@ -48,9 +48,9 @@ $(document).ready(function() {
     Haz que cada vez que se inserte un nuevo carácter, se informe al usuario del número de caracteres restantes: 
     “Dispone de 32 caracteres” o bien un mensaje del tipo "Ha escrito 32 caracteres de 100".*/ 
     $("textarea").on("input", function () {
-        let caracterTexto = $(this).val().length;
-        let caracterMax = $(this).attr("maxlength");
-        let resto = caracterMax-caracterTexto
+        let escribir = $(this).val().length;
+        let max = $(this).attr("maxlength");
+        let resto = max-escribir
         $("#ncaracteres").text( "Dispone de  " + resto + " caracteres");
     });
 
