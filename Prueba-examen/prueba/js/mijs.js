@@ -17,61 +17,56 @@ recuperará su color de manera progresiva, el tamaño de la línea central volve
 ser más corta y el menú se ocultará con un efecto de persiana. Controla la 
 acumulación de efectos. Haz esto también al hacer scroll en el documento
     */
-    $('#hamburger').on({
-        click: function () {
-            if ($('.line-ham').css('background-color') === 'rgb(0, 0, 0)') {
-                $('span:nth-child(2)').animate({ 'width': '1.8rem' })
-                $('.line-ham').css({ 'background-color': 'pink' })
-                $('#menu-toggle').slideToggle('slow')
-
-            } else if ($('.line-ham').css('background-color') === 'rgb(255, 192, 203)') {
-                $('#menu-toggle>li>ul').css('display', 'none')
-                $('span:nth-child(2)').animate({ 'width': '1.37rem' })
-                $('.line-ham').css('background-color', 'black')
-                $('#menu-toggle').slideToggle('slow')
-
-            }
-
+   $('#hamburger').on({
+    click:function(){
+        if($('.line-ham').css('background-color')==='rgb(0, 0, 0)'){
+            $('#menu-toggle').slideToggle('slow')
+        $('#hamburger').children('span:nth-child(2)').animate({'width':'1.9rem'});
+        $('.line-ham').css('background-color','pink')
+        }else if( $('.line-ham').css('background-color')==='rgb(255, 192, 203)'){
+            $('#menu-toggle').slideToggle('slow')
+            $('#hamburger').children('span:nth-child(2)').animate({'width':'1.37rem'});
+            $('.line-ham').css('background-color','black',)
+      
         }
-    })
-    $(window).on('scroll', function () {
-        if ($('#menu-toggle').css('display') != 'none') {
-            $('#menu-toggle').fadeOut(200)
-            $('span:nth-child(2)').animate({ 'width': '1.37rem' })
-            $('.line-ham').css('background-color', 'black')
-        }
-    })
+      
+    }
+   })
+   $(window).on('scroll',function(){
+        $('#menu-toggle').fadeOut();
+    
+   })
+   
+   
+
+   
     /*e) (1punto) Al hacer clic sobre la opción del menú “Alfombras Vinílicas”, se tiene que 
 desplegar el submenú asociado con un efecto de desplazamiento desde la 
 izquierda. Además, el icono + debe transformarse en el icono -. Al volver a hacer 
 clic sobre el icono -, se debe realizar el efecto contrario y el - cambiarse por un +. */
-    $('#menu-toggle>li').has('ul').on('click', function () {
+$('#menu-toggle>li').has('ul').on({
+    click: function(){
         var ul = $(this).children('ul');
         var span = $(this).children('span');
-
-        // Si el UL actualmente está abierto
-        if (ul.is(':visible')) {
-            // Cierra el UL actual y cambia el texto del span
-            $('#menu-toggle>li>ul').slideUp('slow');
-            span.text('+')
-            ul.slideUp('slow');
-        } else {
-            // Cierra todos los UL y cambia los textos de los span
-            $('#menu-toggle>li>ul').slideUp('slow');
-            span.text('-')
-            ul.css({left: '-50vw', display: 'block'}).animate({left: 0}, 'slow');
-            
-        }
-    });
+    if(ul.is(':visible')){
+        $('#menu-toggle>li>ul').slideUp('slow')
+        span.text('+')
+        ul.slideUp('slow')
+    }else{
+        $('#menu-toggle>li>ul').slideUp('slow')
+        span.text('-')
+        ul.css({left: '-50vw',display: 'block'}).animate({left:0},'slow')
+    }
+    }
+})
 /**f) (0,5puntos) Al redimensionar la ventana se tiene que borrar todo el código 
 insertado en tiempo de ejecución asociado al menú para evitar fallos. Utiliza para 
 ello el método removeAttr. */
+$(window).resize(function(){
 
-$(window).resize(function () {
-    $("#menu-toggle").removeAttr("style");
-    $(".line-ham").removeAttr("style");
-});
-
+    $('#menu-toggle').removeAttr('style')
+    $('.line-ham').removeAttr('style')
+})
 
 
 
@@ -79,31 +74,35 @@ $(window).resize(function () {
 /**(1,5 puntos) BARRA SOCIAL y CHAT
 a) (0,25 puntos) Al cargar la página, la barra social aparece en el lateral derecho con 
 un efecto de cambio de opacidad. */
-   
-    $('#chat').fadeIn(2000)
+$('#barra-social').fadeIn(2000)
+  
+
     
     /**b) (0,25 puntos) Al cargar la página, la pestaña del chat aparece en la parte inferior 
 izquierda con un efecto de cambio de opacidad */
-    $('#barra-social').fadeIn(2000)
+$('#chat').fadeIn(2000)    
 
     /**c) (0,5 puntos) Al hacer clic sobre la pestaña del chat debe aparecer la ventana del 
 chat completa con un efecto de persiana deslizante hacia arriba. 
 d) (0,5 puntos) Al hacer clic sobre la X de la cabecera de la ventana de chat, debe 
 ocultarse el chat con un efecto de persiana deslizante hacia abajo. */
-    $('#header-chat1').on({
-        click: function () {
-            $('#header-chat1').hide()
-            $('#header-chat2').slideDown('slow')
-            $('#window-chat').slideDown('slow')
+$('#header-chat1').on({
+    click:function(){
+       
+            $('#header-chat1').hide();
+            $('#header-chat2').slideDown('slow');
+            $('#window-chat').slideDown('slow');
+    }
+})    
+$('#header-chat2').children('span').on({
+    click:function(){
+       
+            $('#header-chat2').slideUp('slow');
+            $('#window-chat').slideUp('slow');
+            $('#header-chat1').show('slow');
+    }
+})    
 
-            $('#header-chat2').children('span').click(function () {
-                $('#header-chat2').slideUp()
-                $('#window-chat').slideUp()
-                $('#header-chat1').fadeIn('slow')
-            })
-        }
-
-    })
 
 /**(1 punto) BOTÓN DE COMPRA
 a) (0,5 puntos) Al posicionar el ratón sobre cualquier artículo que contenga un 
@@ -111,13 +110,11 @@ producto, se debe mostrar en flex, el botón de compra.
 b) (0,5 puntos) Cuando el ratón deja de estar sobre dicho artículo, el botón de 
 compra desaparece con un efecto deslizante hacia arriba. */
     $('.producto').on({
-        mouseenter: function () {
-            let compra = $(this).children('a');
-            compra.show()
+        mouseenter: function(){
+            $(this).children('a').show('slow')
         },
-        mouseleave: function () {
-            let compra = $(this).children('a');
-            compra.slideUp('slow')
+        mouseleave: function(){
+            $(this).children('a').slideUp('slow')
         }
     })
 
@@ -147,30 +144,30 @@ c) (0,5 puntos) Al hacer clic sobre la flecha, nos posicionamos al principio de 
 página con un efecto de animación. La cabecera debe recuperar su estado inicial y 
 la flecha debe desaparecer con un efecto de cambio de opacidad.*/
 
-$(window).on('scroll', function () {
-    if ($(this).scrollTop() > 0) {
-        $("#go-up").fadeIn();
+$(window).on('scroll',function(){
+    if($(this).scrollTop()>50){
+        $('#go-up').fadeIn()
         $('#home-header').css({
-            'position': 'fixed',
-            'width': '100%',
-            'opacity': '0.8'
-        });
-    } else {
-        $("#go-up").fadeOut();
+            position: 'fixed',
+            width: '100%',
+            opacity: '0.8'
+        })
+    }else if($(this).scrollTop()<=50){
+        $('#go-up').fadeOut()
         $('#home-header').css({
-            'position': '',
-            'width': '',
-            'opacity': ''
-        });
+            position: '',
+            width: '',
+            opacity: ''
+        })
+
     }
-});
-$('#go-up').click(function () {
+})
+
+$('#go-up').click(function(){
     $('html').animate({
-        scrollTop:0
-    },500);
-});
-
-
+        scrollTop:0,
+    })
+})
 
 
 /**(1 punto) FORMULARIO
@@ -184,20 +181,21 @@ que cada vez que se inserte un nuevo carácter, se informe al usuario del númer
 de caracteres restantes con un mensaje con el siguiente: “Dispone de 32 
 caracteres */
     // a) Manejar la validación de campos requeridos
-    $("input").blur(function(){
-        if($(this).val().trim() === ""){
-            $(this).next('.error-chat').css('visibility' , 'visible')
-        }
-     })
-    
-     $("input").focus(function(){
-        $(this).next('.error-chat').css('visibility' , 'hidden')
-     })
+   
+$('input').blur(function(){
+    if($(this).val().trim()==='')
+    $(this).next('.error-chat').css('visibility','visible')
+})
 
-    // b) Mostrar el número de caracteres restantes en el textarea
-    $("#mensaje").on("input", function() {
-        let caracteresRestantes = 100 - $(this).val().length;
-        $("#info-caracteres").text("Dispone de " + caracteresRestantes + " caracteres");
-    });
+$('input').focus(function(){
+   
+    $(this).next('.error-chat').css('visibility','hidden')
+})
+$('textarea').on({
+    input:function(){
+        let caracteres=100-$(this).val().length
+        $('#info-caracteres').text('Dispone de '+caracteres+' caracteres')
+    }
+})
 });
 

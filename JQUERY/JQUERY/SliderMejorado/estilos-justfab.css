@@ -275,37 +275,7 @@ div#volverarriba > a{
 	display: block;
   }
   
-  .slider-shadow {
-	width: 100%;
-	height: 15px;
-	position: relative;
-  }
   
-  .slider-shadow:after,
-  .slider-shadow:before {
-	content: '';
-	position: absolute;
-	background: #171c24;
-	height: 100%;
-	width: 50%;
-	left: 10px;
-	top: -20px;
-	-webkit-transform: rotate(-4deg);
-	-ms-transform: rotate(-4deg);
-	-o-transform: rotate(-4deg);
-	transform: rotate(-4deg);
-	-webkit-box-shadow: 0 0 15px 8px #171c24;
-	box-shadow: 0 0 15px 8px #171c24;
-  }
-  
-  .slider-shadow:before {
-	right: 10px;
-	left: auto;
-	-webkit-transform: rotate(4deg);
-	-ms-transform: rotate(4deg);
-	-o-transform: rotate(4deg);
-	transform: rotate(4deg);
-  }
   
   .slider-wrapper img {
 	position: absolute;
@@ -449,16 +419,4 @@ div#volverarriba > a{
 	height: auto;
    }
    /*Voy a poner las fotos en miniatura para que sirva como bolita*/
-   .bolitas-fotos{
-	display:flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	width:100%;
-	justify-content: center;
-   }
-   .bolitas-fotos img{
-	width:10%;
-	height: auto;
-	margin:0rem 0.5rem;
-   }
-
+  
