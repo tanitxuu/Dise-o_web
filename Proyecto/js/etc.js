@@ -105,5 +105,15 @@ $(".leer-cargar").on({
         window.location.href = "descripcion.html";
     }
 })
+//Plugin de slider
+$(document).ready(function () {
+    $("#lightSlider").lightSlider({
+        item:1, //le especifico que vaya de 1 en 1
+        auto: true, // le especifico que se pasen automaticamente
+        speed: 2000, //le indico la velocidad a la que se desplaza 
+        loop: true, //le indico que se repita en bucle
+    });
+});
+
 
 });
